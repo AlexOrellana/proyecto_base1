@@ -205,6 +205,11 @@ public class main extends javax.swing.JFrame {
         Crear_cuenta_AsesorMecánico.getContentPane().add(Crear_cuenta_AsesorMecánico_Tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 310, 110, -1));
 
         Crear_cuenta_AsesorMecánico_BotonCrear.setText("Crear");
+        Crear_cuenta_AsesorMecánico_BotonCrear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Crear_cuenta_AsesorMecánico_BotonCrearActionPerformed(evt);
+            }
+        });
         Crear_cuenta_AsesorMecánico.getContentPane().add(Crear_cuenta_AsesorMecánico_BotonCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 450, -1, -1));
 
         jLabel23.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -294,6 +299,21 @@ public class main extends javax.swing.JFrame {
     private void Crear_cuenta_AsesorMecánico_ContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Crear_cuenta_AsesorMecánico_ContraseñaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Crear_cuenta_AsesorMecánico_ContraseñaActionPerformed
+
+    private void Crear_cuenta_AsesorMecánico_BotonCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Crear_cuenta_AsesorMecánico_BotonCrearActionPerformed
+        try {
+            Connection miConexion;
+            miConexion = Conectar.GetConnetion();
+            java.sql.PreparedStatement pst = miConexion.prepareStatement("INSERT INTO empleado (Nombre,Telefono,Tipo,Contrasena) VALUES (?,?,?,?)");
+            pst.setString(1, Crear_cuenta_AsesorMecánico_NombreCompleto.getText());
+            pst.setString(2, Crear_cuenta_AsesorMecánico_NumeroTelefonoAsignado.getText());
+            pst.setString(3, Crear_cuenta_AsesorMecánico_Tipo.getSelectedItem().toString());
+            pst.setString(4, Crear_cuenta_AsesorMecánico_Contraseña.getText());
+            pst.executeUpdate();
+
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_Crear_cuenta_AsesorMecánico_BotonCrearActionPerformed
 
     /**
      * @param args the command line arguments
