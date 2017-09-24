@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-09-2017 a las 20:37:58
+-- Tiempo de generación: 25-09-2017 a las 01:06:56
 -- Versión del servidor: 10.1.25-MariaDB
 -- Versión de PHP: 7.1.7
 
@@ -71,7 +71,7 @@ CREATE TABLE `cita_mecanico` (
 CREATE TABLE `cliente` (
   `ID_Cliente` int(11) NOT NULL,
   `Nombre` varchar(40) NOT NULL,
-  `Telefono` int(11) DEFAULT NULL,
+  `Telefono` varchar(500) DEFAULT NULL,
   `Direccion` varchar(100) NOT NULL,
   `Correo` varchar(50) NOT NULL,
   `Contrasena` varchar(50) NOT NULL
@@ -86,7 +86,7 @@ CREATE TABLE `cliente` (
 CREATE TABLE `empleado` (
   `ID_Empleado` int(11) NOT NULL,
   `Nombre` varchar(30) NOT NULL,
-  `Telefono` int(11) DEFAULT NULL,
+  `Telefono` varchar(500) DEFAULT NULL,
   `Tipo` varchar(15) NOT NULL,
   `Contrasena` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -142,7 +142,7 @@ ALTER TABLE `cita`
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `ID_Cliente` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_Cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `empleado`
 --
