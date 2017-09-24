@@ -438,7 +438,6 @@ public class main extends javax.swing.JFrame {
         for (int i = 0; i < numeros.size();i++) {
                 modelo.addElement(numeros.get(i));
         }
-        modelo.addElement(this.Crear_cuenta_cliente_numeros.getText());
         this.Crear_cuenta_cliente_ComboBox.setModel(modelo);
     }//GEN-LAST:event_Crear_cuenta_cliente_BotonAgregarActionPerformed
 
