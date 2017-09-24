@@ -14,6 +14,8 @@ import datechooser.beans.DateChooserPanel;
 import java.util.Date;
 import javax.swing.JOptionPane;
 import java.sql.*;
+import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 
 /**
  *
@@ -52,6 +54,7 @@ public class main extends javax.swing.JFrame {
         Crear_cuenta_cliente_BotonCrear = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
         Crear_cuenta_cliente_Contraseña = new javax.swing.JTextField();
+        Crear_cuenta_cliente_numeros = new javax.swing.JFormattedTextField();
         jLabel6 = new javax.swing.JLabel();
         Crear_cita = new javax.swing.JDialog();
         jLabel5 = new javax.swing.JLabel();
@@ -108,23 +111,27 @@ public class main extends javax.swing.JFrame {
         jLabel9.setText("Nombre Completo:");
         Crear_cuenta_cliente.getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, -1, -1));
 
-        Crear_cuenta_cliente_ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "22131421", "94678102", "81872231" }));
-        Crear_cuenta_cliente.getContentPane().add(Crear_cuenta_cliente_ComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, 270, -1));
+        Crear_cuenta_cliente.getContentPane().add(Crear_cuenta_cliente_ComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, 270, -1));
 
         Crear_cuenta_cliente_BotonAgregar.setText("Agregar");
+        Crear_cuenta_cliente_BotonAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Crear_cuenta_cliente_BotonAgregarActionPerformed(evt);
+            }
+        });
         Crear_cuenta_cliente.getContentPane().add(Crear_cuenta_cliente_BotonAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 210, -1, -1));
-        Crear_cuenta_cliente.getContentPane().add(Crear_cuenta_cliente_Direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, 350, -1));
+        Crear_cuenta_cliente.getContentPane().add(Crear_cuenta_cliente_Direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 290, 350, -1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Dirección:");
-        Crear_cuenta_cliente.getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, -1, -1));
-        Crear_cuenta_cliente.getContentPane().add(Crear_cuenta_cliente_CorreoElectronico, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 310, 350, -1));
+        Crear_cuenta_cliente.getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, -1, -1));
+        Crear_cuenta_cliente.getContentPane().add(Crear_cuenta_cliente_CorreoElectronico, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 340, 350, -1));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Correo electrónico:");
-        Crear_cuenta_cliente.getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 290, -1, -1));
+        Crear_cuenta_cliente.getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, -1, -1));
 
         Crear_cuenta_cliente_BotonCrear.setText("Crear");
         Crear_cuenta_cliente_BotonCrear.addActionListener(new java.awt.event.ActionListener() {
@@ -132,18 +139,19 @@ public class main extends javax.swing.JFrame {
                 Crear_cuenta_cliente_BotonCrearActionPerformed(evt);
             }
         });
-        Crear_cuenta_cliente.getContentPane().add(Crear_cuenta_cliente_BotonCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 400, 100, -1));
+        Crear_cuenta_cliente.getContentPane().add(Crear_cuenta_cliente_BotonCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 430, 100, -1));
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
         jLabel22.setText("Contraseña:");
-        Crear_cuenta_cliente.getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 340, -1, -1));
-        Crear_cuenta_cliente.getContentPane().add(Crear_cuenta_cliente_Contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, 350, -1));
+        Crear_cuenta_cliente.getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 370, -1, -1));
+        Crear_cuenta_cliente.getContentPane().add(Crear_cuenta_cliente_Contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 390, 350, -1));
+
+        Crear_cuenta_cliente_numeros.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("####-####"))));
+        Crear_cuenta_cliente.getContentPane().add(Crear_cuenta_cliente_numeros, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, 270, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_base1/black-wallpaper-png-scaled-1000.jpg"))); // NOI18N
-        Crear_cuenta_cliente.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        Crear_cita.getContentPane().setLayout(new java.awt.BorderLayout());
+        Crear_cuenta_cliente.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, -1, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_base1/black-wallpaper-png-scaled-1000.jpg"))); // NOI18N
         Crear_cita.getContentPane().add(jLabel5, java.awt.BorderLayout.CENTER);
@@ -313,6 +321,13 @@ public class main extends javax.swing.JFrame {
                     ps.setString(6, Crear_cuenta_cliente_Contraseña.getText());
                     int registrar = ps.executeUpdate();
                     if (registrar > 0) {
+                        Crear_cuenta_cliente_NombreCompleto.setText("");
+                        Crear_cuenta_cliente_Direccion.setText("");
+                        Crear_cuenta_cliente_CorreoElectronico.setText("");
+                        Crear_cuenta_cliente_Contraseña.setText("");
+                        this.Crear_cuenta_cliente_numeros.setText("");
+                        numeros=new ArrayList();
+                        this.Crear_cuenta_cliente_ComboBox.setModel(new DefaultComboBoxModel());
                         this.Crear_cuenta_cliente.setVisible(false);
                         JOptionPane.showMessageDialog(null, "Cuenta creada exitosamente");
                         this.setVisible(true);
@@ -417,6 +432,16 @@ public class main extends javax.swing.JFrame {
         this.Crear_cuenta_cliente.setVisible(true);
     }//GEN-LAST:event_jButton1MouseClicked
 
+    private void Crear_cuenta_cliente_BotonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Crear_cuenta_cliente_BotonAgregarActionPerformed
+        numeros.add(this.Crear_cuenta_cliente_numeros.getText());
+        DefaultComboBoxModel modelo=new DefaultComboBoxModel();
+        for (int i = 0; i < numeros.size();i++) {
+                modelo.addElement(numeros.get(i));
+        }
+        modelo.addElement(this.Crear_cuenta_cliente_numeros.getText());
+        this.Crear_cuenta_cliente_ComboBox.setModel(modelo);
+    }//GEN-LAST:event_Crear_cuenta_cliente_BotonAgregarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -478,6 +503,7 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JTextField Crear_cuenta_cliente_CorreoElectronico;
     private javax.swing.JTextField Crear_cuenta_cliente_Direccion;
     private javax.swing.JTextField Crear_cuenta_cliente_NombreCompleto;
+    private javax.swing.JFormattedTextField Crear_cuenta_cliente_numeros;
     private javax.swing.JDialog Menu;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
@@ -513,4 +539,5 @@ public class main extends javax.swing.JFrame {
 
     Conectar cc = new Conectar();
     Connection cn = cc.conexion();
+    ArrayList numeros=new ArrayList();
 }
