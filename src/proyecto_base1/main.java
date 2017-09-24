@@ -5,6 +5,15 @@
  */
 package proyecto_base1;
 
+import com.mysql.jdbc.PreparedStatement;
+import com.mysql.jdbc.Statement;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import datechooser.beans.DateChooserPanel;
+import java.util.Date;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author alex
@@ -131,6 +140,8 @@ public class main extends javax.swing.JFrame {
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_base1/black-wallpaper-png-scaled-1000.jpg"))); // NOI18N
         Crear_cuenta_cliente.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        Crear_cita.getContentPane().setLayout(new java.awt.BorderLayout());
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_base1/black-wallpaper-png-scaled-1000.jpg"))); // NOI18N
         Crear_cita.getContentPane().add(jLabel5, java.awt.BorderLayout.CENTER);
@@ -264,7 +275,20 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_login_botonEntrarActionPerformed
 
     private void Crear_cuenta_cliente_BotonCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Crear_cuenta_cliente_BotonCrearActionPerformed
-        // TODO add your handling code here:
+        try {
+            Connection miConexion;
+            miConexion = Conectar.GetConnetion();
+            java.sql.PreparedStatement pst = miConexion.prepareStatement("INSERT INTO cliente (Nombre,Telefono,Direccion,Correo,Contrasena) VALUES (?,?,?,?,?)");
+            pst.setString(1, Crear_cuenta_cliente_NombreCompleto.getText());
+            pst.setString(2, Crear_cuenta_cliente_ComboBox.toString());
+            pst.setString(3, Crear_cuenta_cliente_Direccion.getText());
+            pst.setString(4, Crear_cuenta_cliente_CorreoElectronico.getText());
+            pst.setString(5, Crear_cuenta_cliente_Contraseña.getText());
+            pst.executeUpdate();
+
+        } catch (Exception e) {
+        }
+
     }//GEN-LAST:event_Crear_cuenta_cliente_BotonCrearActionPerformed
 
     private void Crear_cuenta_AsesorMecánico_ContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Crear_cuenta_AsesorMecánico_ContraseñaActionPerformed
@@ -274,7 +298,7 @@ public class main extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[]) throws SQLException {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -298,6 +322,11 @@ public class main extends javax.swing.JFrame {
         }
         //</editor-fold>
 
+        Connection miConexion;
+        miConexion = Conectar.GetConnetion();
+        if (miConexion != null) {
+            JOptionPane.showMessageDialog(null, "Conexion Realizada");
+        }
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -359,4 +388,7 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JPasswordField login_contraseña;
     private javax.swing.JTextField login_usuario;
     // End of variables declaration//GEN-END:variables
+
+    /*Conectar cc = new Conectar();
+    Connection cn = cc.conexion();*/
 }
