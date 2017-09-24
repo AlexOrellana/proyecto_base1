@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import datechooser.beans.DateChooserPanel;
 import java.util.Date;
 import javax.swing.JOptionPane;
+import java.sql.*;
 
 /**
  *
@@ -107,6 +108,7 @@ public class main extends javax.swing.JFrame {
         jLabel9.setText("Nombre Completo:");
         Crear_cuenta_cliente.getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, -1, -1));
 
+        Crear_cuenta_cliente_ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "22131421", "94678102", "81872231" }));
         Crear_cuenta_cliente.getContentPane().add(Crear_cuenta_cliente_ComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, 270, -1));
 
         Crear_cuenta_cliente_BotonAgregar.setText("Agregar");
@@ -125,11 +127,6 @@ public class main extends javax.swing.JFrame {
         Crear_cuenta_cliente.getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 290, -1, -1));
 
         Crear_cuenta_cliente_BotonCrear.setText("Crear");
-        Crear_cuenta_cliente_BotonCrear.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Crear_cuenta_cliente_BotonCrearMouseClicked(evt);
-            }
-        });
         Crear_cuenta_cliente_BotonCrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Crear_cuenta_cliente_BotonCrearActionPerformed(evt);
@@ -145,6 +142,8 @@ public class main extends javax.swing.JFrame {
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_base1/black-wallpaper-png-scaled-1000.jpg"))); // NOI18N
         Crear_cuenta_cliente.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        Crear_cita.getContentPane().setLayout(new java.awt.BorderLayout());
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_base1/black-wallpaper-png-scaled-1000.jpg"))); // NOI18N
         Crear_cita.getContentPane().add(jLabel5, java.awt.BorderLayout.CENTER);
@@ -296,28 +295,57 @@ public class main extends javax.swing.JFrame {
     private void login_botonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_botonEntrarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_login_botonEntrarActionPerformed
-
+    PreparedStatement ps;
     private void Crear_cuenta_cliente_BotonCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Crear_cuenta_cliente_BotonCrearActionPerformed
         try {
-            if(this.Crear_cuenta_cliente_BotonCrear.getText().equals("Crear")){
-                Connection miConexion;
-                miConexion = Conectar.GetConnetion();
-                java.sql.PreparedStatement pst = miConexion.prepareStatement("INSERT INTO cliente (Nombre,Telefono,Direccion,Correo,Contrasena) VALUES (?,?,?,?,?)");
-                pst.setString(1, Crear_cuenta_cliente_NombreCompleto.getText());
-                pst.setString(2, Crear_cuenta_cliente_ComboBox.toString());
-                pst.setString(3, Crear_cuenta_cliente_Direccion.getText());
-                pst.setString(4, Crear_cuenta_cliente_CorreoElectronico.getText());
-                pst.setString(5, Crear_cuenta_cliente_Contraseña.getText());
-                pst.executeUpdate();
-                this.Crear_cuenta_cliente.setVisible(false);
+            if (this.Crear_cuenta_cliente_BotonCrear.getText().equals("Crear")) {
+//                Connection miConexion;
+//                miConexion = Conectar.GetConnetion();
+                String datos = (String) Crear_cuenta_cliente_ComboBox.getSelectedItem();
+                String insertar = "insert into cliente (ID_Cliente,Nombre,Telefono,Direccion,Correo,Contrasena) values (?,?,?,?,?,?)";
+                try {
+                    ps = (PreparedStatement) cn.prepareCall(insertar);
+                    ps.setString(1, null);
+                    ps.setString(2, Crear_cuenta_cliente_NombreCompleto.getText());
+                    ps.setString(3, datos);
+                    ps.setString(4, Crear_cuenta_cliente_Direccion.getText());
+                    ps.setString(5, Crear_cuenta_cliente_CorreoElectronico.getText());
+                    ps.setString(6, Crear_cuenta_cliente_Contraseña.getText());
+                    int registrar = ps.executeUpdate();
+                    if (registrar > 0) {
+                        this.Crear_cuenta_cliente.setVisible(false);
+                        JOptionPane.showMessageDialog(null, "Cuenta creada exitosamente");
+                        this.setVisible(true);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "La cuenta NO FUE REGISTRADA, FAVOR VER CODIGO");
+                    }
+                } catch (Exception e) {
+                }
+
+                /*INSERT INTO `cliente` (`ID_Cliente`, `Nombre`, `Telefono`, `Direccion`, `Correo`, `Contrasena
+                `) VALUES(NULL, 'asd', '32132', 'asd', 'asd', 'asd'
+                );*/
+                //java.sql.PreparedStatement pst = cn.prepareStatement("INSERT INTO cliente (ID_Cliente,Nombre,Telefono,Direccion,Correo,Contrasena) VALUES ('NULL','" + Crear_cuenta_cliente_NombreCompleto.getText() + "','" + datos + "','" + Crear_cuenta_cliente_Direccion.getText() + "','" + Crear_cuenta_cliente_CorreoElectronico.getText() + "','" + Crear_cuenta_cliente_Contraseña.getText() + "')");
+                //pst.setString(2, Crear_cuenta_cliente_NombreCompleto.getText());
+                //pst.setString(3, Crear_cuenta_cliente_ComboBox.toString());
+                //pst.setString(4, Crear_cuenta_cliente_Direccion.getText());
+                //pst.setString(5, Crear_cuenta_cliente_CorreoElectronico.getText());
+                //pst.setString(6, Crear_cuenta_cliente_Contraseña.getText());
+                //int registrar = pst.executeUpdate();
+                /* if (registrar > 0) {
+                    this.Crear_cuenta_cliente.setVisible(false);
                 JOptionPane.showMessageDialog(null, "Cuenta creada exitosamente");
                 this.setVisible(true);
-            }else{
+                }else{
+                    JOptionPane.showMessageDialog(null, "La cuenta NO FUE REGISTRADA, FAVOR VER CODIGO");
+                }*/
+            } else {
                 this.Crear_cuenta_cliente.setVisible(false);
                 JOptionPane.showMessageDialog(null, "Cuenta modificada exitosamente");
                 this.Menu.setVisible(true);
             }
         } catch (Exception e) {
+            e.getMessage();
         }
 
     }//GEN-LAST:event_Crear_cuenta_cliente_BotonCrearActionPerformed
@@ -327,10 +355,31 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_Crear_cuenta_AsesorMecánico_ContraseñaActionPerformed
 
     private void Crear_cuenta_AsesorMecánico_BotonCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Crear_cuenta_AsesorMecánico_BotonCrearActionPerformed
-        try {
-            Connection miConexion;
-            miConexion = Conectar.GetConnetion();
-            java.sql.PreparedStatement pst = miConexion.prepareStatement("INSERT INTO empleado (Nombre,Telefono,Tipo,Contrasena) VALUES (?,?,?,?)");
+        String datos = (String) Crear_cuenta_AsesorMecánico_Tipo.getSelectedItem();
+                String insertar = "insert into empleado (ID_Empleado,Nombre,Telefono,Tipo,Contrasena) values (?,?,?,?,?)";
+                try {
+                    ps = (PreparedStatement) cn.prepareCall(insertar);
+                    ps.setString(1, null);
+                    ps.setString(2, Crear_cuenta_AsesorMecánico_NombreCompleto.getText());
+                    ps.setString(3, Crear_cuenta_AsesorMecánico_NumeroTelefonoAsignado.getText());
+                    ps.setString(4, datos);
+                    ps.setString(5, Crear_cuenta_AsesorMecánico_Contraseña.getText());
+                    
+                    int registrar = ps.executeUpdate();
+                    if (registrar > 0) {
+                        this.Crear_cuenta_AsesorMecánico.setVisible(false);
+                        JOptionPane.showMessageDialog(null, "Cuenta creada exitosamente");
+                        this.setVisible(true);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "La cuenta NO FUE REGISTRADA, FAVOR VER CODIGO");
+                    }
+                } catch (Exception e) {
+                }
+        
+        /*try {
+//            Connection miConexion;
+//            miConexion = Conectar.GetConnetion();
+            java.sql.PreparedStatement pst = cn.prepareStatement("INSERT INTO empleado (Nombre,Telefono,Tipo,Contrasena) VALUES (?,?,?,?)");
             pst.setString(1, Crear_cuenta_AsesorMecánico_NombreCompleto.getText());
             pst.setString(2, Crear_cuenta_AsesorMecánico_NumeroTelefonoAsignado.getText());
             pst.setString(3, Crear_cuenta_AsesorMecánico_Tipo.getSelectedItem().toString());
@@ -338,7 +387,7 @@ public class main extends javax.swing.JFrame {
             pst.executeUpdate();
 
         } catch (Exception e) {
-        }
+        }*/
     }//GEN-LAST:event_Crear_cuenta_AsesorMecánico_BotonCrearActionPerformed
 
     private void jToggleButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton1MouseClicked
@@ -357,10 +406,6 @@ public class main extends javax.swing.JFrame {
         this.Menu.setLocationRelativeTo(this);
         this.Menu.setVisible(true);
     }//GEN-LAST:event_login_botonEntrarMouseClicked
-
-    private void Crear_cuenta_cliente_BotonCrearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Crear_cuenta_cliente_BotonCrearMouseClicked
-        
-    }//GEN-LAST:event_Crear_cuenta_cliente_BotonCrearMouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         //necesita el autocompletado
@@ -399,12 +444,12 @@ public class main extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        Connection miConexion;
+        /*Connection miConexion;
         miConexion = Conectar.GetConnetion();
         if (miConexion != null) {
             JOptionPane.showMessageDialog(null, "Conexion Realizada");
-        }
-        /* Create and display the form */
+        }*/
+ /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new main().setVisible(true);
@@ -466,6 +511,6 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JTextField login_usuario;
     // End of variables declaration//GEN-END:variables
 
-    /*Conectar cc = new Conectar();
-    Connection cn = cc.conexion();*/
+    Conectar cc = new Conectar();
+    Connection cn = cc.conexion();
 }

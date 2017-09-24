@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
  */
 public class Conectar {
 
-    public static Connection GetConnetion() throws SQLException {
+    /*public static Connection GetConnetion() throws SQLException {
         Connection conexion = null;
         try {
 
@@ -43,15 +43,16 @@ public class Conectar {
     }
     public void close(){
         
-    }
-    /*Connection conect = null;
+    }*/
+    Connection conect = null;
     public Connection conexion(){
         try {
-            Class.forName(".com.mysql.jdbc.Driver");
-            conect = DriverManager.getConnection("jdbc:mysql://localhost/proyecto");
+            Class.forName("com.mysql.jdbc.Driver");
+            conect = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","");
+            JOptionPane.showMessageDialog(null, "Conectado");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error al conectar"+e);
         }
         return conect;
-    }*/
+    }
 }

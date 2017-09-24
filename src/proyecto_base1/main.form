@@ -66,7 +66,11 @@
         <Component class="javax.swing.JComboBox" name="Crear_cuenta_cliente_ComboBox">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="0"/>
+              <StringArray count="3">
+                <StringItem index="0" value="22131421"/>
+                <StringItem index="1" value="94678102"/>
+                <StringItem index="2" value="81872231"/>
+              </StringArray>
             </Property>
           </Properties>
           <AuxValues>
@@ -139,7 +143,6 @@
             <Property name="text" type="java.lang.String" value="Crear"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Crear_cuenta_cliente_BotonCrearMouseClicked"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Crear_cuenta_cliente_BotonCrearActionPerformed"/>
           </Events>
           <Constraints>
