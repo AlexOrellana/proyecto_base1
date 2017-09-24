@@ -125,12 +125,17 @@ public class main extends javax.swing.JFrame {
         Crear_cuenta_cliente.getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 290, -1, -1));
 
         Crear_cuenta_cliente_BotonCrear.setText("Crear");
+        Crear_cuenta_cliente_BotonCrear.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Crear_cuenta_cliente_BotonCrearMouseClicked(evt);
+            }
+        });
         Crear_cuenta_cliente_BotonCrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Crear_cuenta_cliente_BotonCrearActionPerformed(evt);
             }
         });
-        Crear_cuenta_cliente.getContentPane().add(Crear_cuenta_cliente_BotonCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 400, -1, -1));
+        Crear_cuenta_cliente.getContentPane().add(Crear_cuenta_cliente_BotonCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 400, 100, -1));
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
@@ -140,8 +145,6 @@ public class main extends javax.swing.JFrame {
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_base1/black-wallpaper-png-scaled-1000.jpg"))); // NOI18N
         Crear_cuenta_cliente.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        Crear_cita.getContentPane().setLayout(new java.awt.BorderLayout());
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_base1/black-wallpaper-png-scaled-1000.jpg"))); // NOI18N
         Crear_cita.getContentPane().add(jLabel5, java.awt.BorderLayout.CENTER);
@@ -235,6 +238,11 @@ public class main extends javax.swing.JFrame {
         Menu.getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, -1, -1));
 
         jButton1.setText("Modificar mi cuenta");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
         Menu.getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, -1, -1));
 
         jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_base1/abstract-black-geometric-line-pattern-34-iphone-7-plus-wallpaper-576x1024.jpg"))); // NOI18N
@@ -249,6 +257,11 @@ public class main extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 90, -1));
 
         login_botonEntrar.setText("ENTRAR");
+        login_botonEntrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                login_botonEntrarMouseClicked(evt);
+            }
+        });
         login_botonEntrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 login_botonEntrarActionPerformed(evt);
@@ -267,6 +280,11 @@ public class main extends javax.swing.JFrame {
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, -1));
 
         jToggleButton1.setText("Crear cuenta");
+        jToggleButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jToggleButton1MouseClicked(evt);
+            }
+        });
         getContentPane().add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 20, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_base1/IMG-13.jpg"))); // NOI18N
@@ -281,16 +299,24 @@ public class main extends javax.swing.JFrame {
 
     private void Crear_cuenta_cliente_BotonCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Crear_cuenta_cliente_BotonCrearActionPerformed
         try {
-            Connection miConexion;
-            miConexion = Conectar.GetConnetion();
-            java.sql.PreparedStatement pst = miConexion.prepareStatement("INSERT INTO cliente (Nombre,Telefono,Direccion,Correo,Contrasena) VALUES (?,?,?,?,?)");
-            pst.setString(1, Crear_cuenta_cliente_NombreCompleto.getText());
-            pst.setString(2, Crear_cuenta_cliente_ComboBox.toString());
-            pst.setString(3, Crear_cuenta_cliente_Direccion.getText());
-            pst.setString(4, Crear_cuenta_cliente_CorreoElectronico.getText());
-            pst.setString(5, Crear_cuenta_cliente_Contraseña.getText());
-            pst.executeUpdate();
-
+            if(this.Crear_cuenta_cliente_BotonCrear.getText().equals("Crear")){
+                Connection miConexion;
+                miConexion = Conectar.GetConnetion();
+                java.sql.PreparedStatement pst = miConexion.prepareStatement("INSERT INTO cliente (Nombre,Telefono,Direccion,Correo,Contrasena) VALUES (?,?,?,?,?)");
+                pst.setString(1, Crear_cuenta_cliente_NombreCompleto.getText());
+                pst.setString(2, Crear_cuenta_cliente_ComboBox.toString());
+                pst.setString(3, Crear_cuenta_cliente_Direccion.getText());
+                pst.setString(4, Crear_cuenta_cliente_CorreoElectronico.getText());
+                pst.setString(5, Crear_cuenta_cliente_Contraseña.getText());
+                pst.executeUpdate();
+                this.Crear_cuenta_cliente.setVisible(false);
+                JOptionPane.showMessageDialog(null, "Cuenta creada exitosamente");
+                this.setVisible(true);
+            }else{
+                this.Crear_cuenta_cliente.setVisible(false);
+                JOptionPane.showMessageDialog(null, "Cuenta modificada exitosamente");
+                this.Menu.setVisible(true);
+            }
         } catch (Exception e) {
         }
 
@@ -314,6 +340,37 @@ public class main extends javax.swing.JFrame {
         } catch (Exception e) {
         }
     }//GEN-LAST:event_Crear_cuenta_AsesorMecánico_BotonCrearActionPerformed
+
+    private void jToggleButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton1MouseClicked
+        Crear_cuenta_cliente_BotonCrear.setText("Crear");
+        this.setVisible(false);
+        this.Crear_cuenta_cliente.pack();
+        this.Crear_cuenta_cliente.setModal(true);
+        this.Crear_cuenta_cliente.setLocationRelativeTo(this);
+        this.Crear_cuenta_cliente.setVisible(true);
+    }//GEN-LAST:event_jToggleButton1MouseClicked
+
+    private void login_botonEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_login_botonEntrarMouseClicked
+        this.setVisible(false);
+        this.Menu.pack();
+        this.Menu.setModal(true);
+        this.Menu.setLocationRelativeTo(this);
+        this.Menu.setVisible(true);
+    }//GEN-LAST:event_login_botonEntrarMouseClicked
+
+    private void Crear_cuenta_cliente_BotonCrearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Crear_cuenta_cliente_BotonCrearMouseClicked
+        
+    }//GEN-LAST:event_Crear_cuenta_cliente_BotonCrearMouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        //necesita el autocompletado
+        this.Menu.setVisible(false);
+        this.Crear_cuenta_cliente_BotonCrear.setText("Modificar");
+        this.Crear_cuenta_cliente.pack();
+        this.Crear_cuenta_cliente.setModal(true);
+        this.Crear_cuenta_cliente.setLocationRelativeTo(this);
+        this.Crear_cuenta_cliente.setVisible(true);
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
