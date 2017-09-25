@@ -869,6 +869,7 @@ public class main extends javax.swing.JFrame {
             }
 
         } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Joven usted ha ingresado algo incorrecto o no exite su usuario");
             System.out.println(e);
         }
         return new String[0];
