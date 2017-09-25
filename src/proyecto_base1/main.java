@@ -141,6 +141,26 @@ public class main extends javax.swing.JFrame {
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
         jLabel27 = new javax.swing.JLabel();
+        Menu_mecanico = new javax.swing.JDialog();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        jComboBox3 = new javax.swing.JComboBox<>();
+        jComboBox5 = new javax.swing.JComboBox<>();
+        dateChooserPanel2 = new datechooser.beans.DateChooserPanel();
+        jButton14 = new javax.swing.JButton();
+        jButton16 = new javax.swing.JButton();
+        jLabel21 = new javax.swing.JLabel();
+        Menu_Asesor = new javax.swing.JDialog();
+        jLabel52 = new javax.swing.JLabel();
+        jLabel53 = new javax.swing.JLabel();
+        jComboBox6 = new javax.swing.JComboBox<>();
+        jLabel54 = new javax.swing.JLabel();
+        jComboBox7 = new javax.swing.JComboBox<>();
+        jButton17 = new javax.swing.JButton();
+        jButton15 = new javax.swing.JButton();
+        jLabel51 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         login_botonEntrar = new javax.swing.JButton();
         login_usuario = new javax.swing.JTextField();
@@ -546,6 +566,72 @@ public class main extends javax.swing.JFrame {
 
         jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_base1/abstract-black-geometric-line-pattern-34-iphone-7-plus-wallpaper-576x1024.jpg"))); // NOI18N
         Carros_cliente.getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 573, 361));
+
+        Menu_mecanico.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel47.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel47.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel47.setText("Menu");
+        Menu_mecanico.getContentPane().add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 80, -1, -1));
+
+        jLabel48.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel48.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel48.setText("Fecha de entrega:");
+        Menu_mecanico.getContentPane().add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 180, -1, -1));
+
+        jLabel49.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel49.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel49.setText("Autos asignados:");
+        Menu_mecanico.getContentPane().add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, -1, -1));
+
+        jLabel50.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel50.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel50.setText("Estado:");
+        Menu_mecanico.getContentPane().add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 180, -1, -1));
+
+        Menu_mecanico.getContentPane().add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, 210, -1));
+
+        Menu_mecanico.getContentPane().add(jComboBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 210, -1));
+        Menu_mecanico.getContentPane().add(dateChooserPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 210, -1, -1));
+
+        jButton14.setText("Salir");
+        Menu_mecanico.getContentPane().add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 30, -1, -1));
+
+        jButton16.setText("Actualizar");
+        Menu_mecanico.getContentPane().add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 420, -1, -1));
+
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_base1/black-wallpaper-png-scaled-1000.jpg"))); // NOI18N
+        Menu_mecanico.getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1002, 560));
+
+        Menu_Asesor.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel52.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel52.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel52.setText("Menu");
+        Menu_Asesor.getContentPane().add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 80, -1, -1));
+
+        jLabel53.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel53.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel53.setText("Auto:");
+        Menu_Asesor.getContentPane().add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 160, -1, -1));
+
+        Menu_Asesor.getContentPane().add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 180, 210, -1));
+
+        jLabel54.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel54.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel54.setText("Mecanico:");
+        Menu_Asesor.getContentPane().add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 220, -1, -1));
+
+        Menu_Asesor.getContentPane().add(jComboBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 240, 210, -1));
+
+        jButton17.setText("Asignar");
+        Menu_Asesor.getContentPane().add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 290, -1, -1));
+
+        jButton15.setText("Salir");
+        Menu_Asesor.getContentPane().add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 20, -1, -1));
+
+        jLabel51.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_base1/black-wallpaper-png-scaled-1000.jpg"))); // NOI18N
+        Menu_Asesor.getContentPane().add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1001, 559));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -972,13 +1058,20 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JTextField Crear_cuenta_cliente_Usuario;
     private javax.swing.JFormattedTextField Crear_cuenta_cliente_numeros;
     private javax.swing.JDialog Menu;
+    private javax.swing.JDialog Menu_Asesor;
+    private javax.swing.JDialog Menu_mecanico;
     private javax.swing.JLabel Usuario;
     private datechooser.beans.DateChooserPanel dateChooserPanel1;
+    private datechooser.beans.DateChooserPanel dateChooserPanel2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -989,7 +1082,11 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox4;
+    private javax.swing.JComboBox<String> jComboBox5;
+    private javax.swing.JComboBox<String> jComboBox6;
+    private javax.swing.JComboBox<String> jComboBox7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1003,6 +1100,7 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
@@ -1030,7 +1128,15 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
