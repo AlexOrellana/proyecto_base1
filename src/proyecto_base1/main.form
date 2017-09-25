@@ -1202,7 +1202,6 @@
         <Property name="text" type="java.lang.String" value="ENTRAR"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="login_botonEntrarMouseClicked"/>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="login_botonEntrarActionPerformed"/>
       </Events>
       <Constraints>

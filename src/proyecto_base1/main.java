@@ -500,11 +500,6 @@ public class main extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 90, -1));
 
         login_botonEntrar.setText("ENTRAR");
-        login_botonEntrar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                login_botonEntrarMouseClicked(evt);
-            }
-        });
         login_botonEntrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 login_botonEntrarActionPerformed(evt);
@@ -655,14 +650,6 @@ public class main extends javax.swing.JFrame {
         this.Crear_cuenta_cliente.setLocationRelativeTo(this);
         this.Crear_cuenta_cliente.setVisible(true);
     }//GEN-LAST:event_jToggleButton1MouseClicked
-
-    private void login_botonEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_login_botonEntrarMouseClicked
-        this.setVisible(false);
-        this.Menu.pack();
-        this.Menu.setModal(true);
-        this.Menu.setLocationRelativeTo(this);
-        this.Menu.setVisible(true);
-    }//GEN-LAST:event_login_botonEntrarMouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         //necesita el autocompletado
