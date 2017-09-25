@@ -195,7 +195,11 @@ public class main extends javax.swing.JFrame {
         jLabel30.setText("Fecha:");
         Crear_cita.getContentPane().add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, -1, -1));
         Crear_cita.getContentPane().add(dateChooserPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 320, 210));
+
+        jSpinner1.setModel(new javax.swing.SpinnerNumberModel(0, 0, 59, 1));
         Crear_cita.getContentPane().add(jSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 160, 40, -1));
+
+        jSpinner2.setModel(new javax.swing.SpinnerNumberModel(7, 7, 15, 1));
         Crear_cita.getContentPane().add(jSpinner2, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 160, 40, -1));
 
         jLabel31.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
