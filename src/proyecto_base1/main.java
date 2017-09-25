@@ -533,6 +533,11 @@ public class main extends javax.swing.JFrame {
 
     private void login_botonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_botonEntrarActionPerformed
         LoginData(login_usuario.getText(), login_contraseña.getText());
+        this.setVisible(false); 
+        this.Menu.pack(); 
+        this.Menu.setModal(true); 
+        this.Menu.setLocationRelativeTo(this); 
+        this.Menu.setVisible(true); 
     }//GEN-LAST:event_login_botonEntrarActionPerformed
     PreparedStatement ps;
     private void Crear_cuenta_cliente_BotonCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Crear_cuenta_cliente_BotonCrearActionPerformed
