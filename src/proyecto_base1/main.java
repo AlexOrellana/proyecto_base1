@@ -15,7 +15,16 @@ import java.util.Date;
 import javax.swing.JOptionPane;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Properties;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
 
 /**
  *
@@ -274,7 +283,7 @@ public class main extends javax.swing.JFrame {
         jLabel29.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(255, 255, 255));
         jLabel29.setText("ID:");
-        Crear_cita.getContentPane().add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, -1));
+        Crear_cita.getContentPane().add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, -1, -1));
 
         jLabel30.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(255, 255, 255));
@@ -310,6 +319,11 @@ public class main extends javax.swing.JFrame {
         jLabel34.setText("Tipo:");
         Crear_cita.getContentPane().add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 200, -1, -1));
 
+        Crear_cita_Combobox.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                Crear_cita_ComboboxItemStateChanged(evt);
+            }
+        });
         Crear_cita.getContentPane().add(Crear_cita_Combobox, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 320, -1));
 
         jLabel35.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -321,8 +335,8 @@ public class main extends javax.swing.JFrame {
         jLabel36.setForeground(new java.awt.Color(255, 255, 255));
         jLabel36.setText("Cliente:");
         Crear_cita.getContentPane().add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
-        Crear_cita.getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 60, 10));
-        Crear_cita.getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 60, 10));
+        Crear_cita.getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 100, 30));
+        Crear_cita.getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 80, 30));
 
         jButton2.setText("Crear");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -752,14 +766,13 @@ public class main extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "La cuenta NO FUE REGISTRADA, FAVOR VER CODIGO");
                 }*/
             } else {
-                
-                try{
+
+                try {
                     int registrar;
                     System.out.println(ID_Current);
-                    ps = (PreparedStatement) cn.prepareCall("UPDATE `clientes` SET contra_Cliente = '"+Crear_cuenta_cliente_Contraseña.getText()+"', correoElectronico_Cliente = '"+Crear_cuenta_cliente_CorreoElectronico.getText()+"', direccion_Cliente = '"+Crear_cuenta_cliente_Direccion.getText()+"', primerApellido_Cliente = '"+Crear_cuenta_cliente_PrimerApellido.getText()+"', primerNombre_Cliente = '"+Crear_cuenta_cliente_PrimerNombre.getText()+"', segundoApellido_Cliente = '"+Crear_cuenta_cliente_SegundoApellido.getText()+"', segundoNombre_Cliente = '"+Crear_cuenta_cliente_SegundoNombre.getText()+"'  WHERE `clientes`.`id_Cliente` = '" + ID_Current + "'");
+                    ps = (PreparedStatement) cn.prepareCall("UPDATE `clientes` SET contra_Cliente = '" + Crear_cuenta_cliente_Contraseña.getText() + "', correoElectronico_Cliente = '" + Crear_cuenta_cliente_CorreoElectronico.getText() + "', direccion_Cliente = '" + Crear_cuenta_cliente_Direccion.getText() + "', primerApellido_Cliente = '" + Crear_cuenta_cliente_PrimerApellido.getText() + "', primerNombre_Cliente = '" + Crear_cuenta_cliente_PrimerNombre.getText() + "', segundoApellido_Cliente = '" + Crear_cuenta_cliente_SegundoApellido.getText() + "', segundoNombre_Cliente = '" + Crear_cuenta_cliente_SegundoNombre.getText() + "'  WHERE `clientes`.`id_Cliente` = '" + ID_Current + "'");
                     registrar = ps.executeUpdate();
-                    
-                    
+
                     if (registrar > 0) {
                         Crear_cuenta_cliente_Usuario.setText("");
                         Crear_cuenta_cliente_PrimerNombre.setText("");
@@ -775,17 +788,17 @@ public class main extends javax.swing.JFrame {
                         this.Crear_cuenta_cliente.setVisible(false);
                         JOptionPane.showMessageDialog(null, "Cuenta modificada exitosamente");
                         this.Menu.setVisible(true);
-                    }else{
-                        
+                    } else {
+
                     }
                 } catch (Exception e) {
                     e.getMessage();
                 }
             }
-        }catch(Exception e){
-            
+        } catch (Exception e) {
+
         }
-        
+
 
     }//GEN-LAST:event_Crear_cuenta_cliente_BotonCrearActionPerformed
 
@@ -839,6 +852,19 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_jToggleButton1MouseClicked
 
     private void Crear_cuenta_cliente_BotonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Crear_cuenta_cliente_BotonAgregarActionPerformed
+        //INSERT INTO `telefonos` (`idCliente_Telefono`, `numero_Telefono`) VALUES ('asd', '22456412');
+        String insertar = "INSERT INTO `telefonos` (`idCliente_Telefono`, `numero_Telefono`) VALUES ('" + Crear_cuenta_cliente_Usuario.getText() + "', '" + Crear_cuenta_cliente_numeros.getText() + "')";
+        try {
+            ps = (PreparedStatement) cn.prepareCall(insertar);
+
+            int registrar = ps.executeUpdate();
+            if (registrar > 0) {
+                JOptionPane.showMessageDialog(null, "Se ha registrado su numero al usuario:" + Crear_cuenta_cliente_Usuario.getText());
+            } else {
+                JOptionPane.showMessageDialog(null, "El numero NO FUE REGISTRADO, FAVOR VER CODIGO");
+            }
+        } catch (Exception e) {
+        }
         numeros.add(this.Crear_cuenta_cliente_numeros.getText());
         DefaultComboBoxModel modelo = new DefaultComboBoxModel();
         for (int i = 0; i < numeros.size(); i++) {
@@ -876,9 +902,9 @@ public class main extends javax.swing.JFrame {
     private void Crear_cuenta_cliente_BotonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Crear_cuenta_cliente_BotonCancelarActionPerformed
         // TODO add your handling code here:
         Crear_cuenta_cliente.setVisible(false);
-        if (Crear_cuenta_cliente_BotonCrear.getText()=="Crear") {
+        if (Crear_cuenta_cliente_BotonCrear.getText() == "Crear") {
             this.setVisible(true);
-        }else if (Crear_cuenta_cliente_BotonCrear.getText()=="Modificar") {
+        } else if (Crear_cuenta_cliente_BotonCrear.getText() == "Modificar") {
             this.Menu.setVisible(true);
         }
     }//GEN-LAST:event_Crear_cuenta_cliente_BotonCancelarActionPerformed
@@ -886,31 +912,31 @@ public class main extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         //UPDATE `clientes` SET `segundoNombre_Cliente` = 'hola', `contra_Cliente` = 'zxc' WHERE `clientes`.`id_Cliente` = 'super'; 
-                try {
-                    String cargar = "SELECT * FROM `clientes` WHERE `id_Cliente` = '"+ID_Current+"'";
-                    rs =  (ResultSet) st.executeQuery(cargar);
-                    String []data = new String[8];
-                    
-                    while(rs.next()){
-                        data[0] = rs.getString(1);
-                        data[1] = rs.getString(2);
-                        data[2] = rs.getString(3);
-                        data[3] = rs.getString(4);
-                        data[4] = rs.getString(5);
-                        data[5] = rs.getString(6);
-                        data[6] = rs.getString(7);
-                        data[7] = rs.getString(8);
-                    }
-                    Crear_cuenta_cliente_Usuario.setText(data[0]);
-                    Crear_cuenta_cliente_PrimerNombre.setText(data[1]);
-                    Crear_cuenta_cliente_SegundoNombre.setText(data[2]);
-                    Crear_cuenta_cliente_PrimerApellido.setText(data[3]);
-                    Crear_cuenta_cliente_SegundoApellido.setText(data[4]);
-                    Crear_cuenta_cliente_Direccion.setText(data[5]);
-                    Crear_cuenta_cliente_CorreoElectronico.setText(data[6]);
-                    Crear_cuenta_cliente_Contraseña.setText(data[7]);
-                }catch (Exception e){
-                }
+        try {
+            String cargar = "SELECT * FROM `clientes` WHERE `id_Cliente` = '" + ID_Current + "'";
+            rs = (ResultSet) st.executeQuery(cargar);
+            String[] data = new String[8];
+
+            while (rs.next()) {
+                data[0] = rs.getString(1);
+                data[1] = rs.getString(2);
+                data[2] = rs.getString(3);
+                data[3] = rs.getString(4);
+                data[4] = rs.getString(5);
+                data[5] = rs.getString(6);
+                data[6] = rs.getString(7);
+                data[7] = rs.getString(8);
+            }
+            Crear_cuenta_cliente_Usuario.setText(data[0]);
+            Crear_cuenta_cliente_PrimerNombre.setText(data[1]);
+            Crear_cuenta_cliente_SegundoNombre.setText(data[2]);
+            Crear_cuenta_cliente_PrimerApellido.setText(data[3]);
+            Crear_cuenta_cliente_SegundoApellido.setText(data[4]);
+            Crear_cuenta_cliente_Direccion.setText(data[5]);
+            Crear_cuenta_cliente_CorreoElectronico.setText(data[6]);
+            Crear_cuenta_cliente_Contraseña.setText(data[7]);
+        } catch (Exception e) {
+        }
         this.Menu.setVisible(false);
         this.Crear_cuenta_cliente_BotonCrear.setText("Modificar");
         this.Crear_cuenta_cliente.pack();
@@ -927,6 +953,19 @@ public class main extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
+        try {
+
+            String carga = "SELECT placa_Automovil FROM `automoviles` ORDER BY placa_Automovil AND `idCliente_Automovil` = '" + ID_Current + "'";
+
+            rs = (ResultSet) st.executeQuery(carga);
+
+            Crear_cita_Combobox.addItem("Seleccione: ");
+            while (rs.next()) {
+                jComboBox1.addItem(rs.getString(1));
+            }
+
+        } catch (Exception e) {
+        }
         this.Menu.setVisible(false);
         this.Carros_cliente.pack();
         this.Carros_cliente.setModal(true);
@@ -960,15 +999,78 @@ public class main extends javax.swing.JFrame {
 
     private void Agregar_Carro_BotonListoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Agregar_Carro_BotonListoActionPerformed
         // TODO add your handling code here:
+        //INSERT INTO `automoviles` (`placa_Automovil`, `idCliente_Automovil`, `modelo_Automovil`, `numeroMotor_Automovil`) VALUES ('PDL6942', 'asd', 'Pato', '213456872');
+        String insert = "INSERT INTO `automoviles` (`placa_Automovil`, `idCliente_Automovil`, `modelo_Automovil`, `numeroMotor_Automovil`) VALUES ('" + Agregar_Carro_Placa.getText() + "', '" + ID_Current + "', '" + Agregar_Carro_Modelo.getText() + "', '" + Agregar_Carro_NumeroMotor.getText() + "')";
+        //String insertar = "insert into automoviles (placa_Automovil,idCliente_Automovil,modelo_Automovil,numeroMotor_Automovil) values (?,?,?,?)";
+        try {
+            ps = (PreparedStatement) cn.prepareCall(insert);
+            /*ps.setString(1, Agregar_Carro_Placa.getText());
+            ps.setString(2, ID_Current);
+            ps.setString(3, Agregar_Carro_Modelo.getText());
+            ps.setString(4, Agregar_Carro_NumeroMotor.getText());
+             */
+            int registrar = ps.executeUpdate();
+            if (registrar > 0) {
+                Agregar_Carro_Placa.setText("");
+                Agregar_Carro_Modelo.setText("");
+                Agregar_Carro_NumeroMotor.setText("");
+                JOptionPane.showMessageDialog(null, "Automovil creado exitosamente");
+                this.setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(null, "El auto NO FUE REGISTRADO, FAVOR VER CODIGO");
+            }
+        } catch (Exception e) {
+        }
         this.Agregar_Carro.setVisible(false);
         this.Carros_cliente.setVisible(true);
         Agregar_Carro_Modelo.setText("");
         Agregar_Carro_NumeroMotor.setText("");
         Agregar_Carro_Placa.setText("");
     }//GEN-LAST:event_Agregar_Carro_BotonListoActionPerformed
-
+String corr;
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         // TODO add your handling code here:
+        DefaultComboBoxModel mode = new DefaultComboBoxModel();
+        Crear_cita_Combobox.setModel(mode);
+
+        jTextField1.setText(ID_Current);
+        try {
+            String cargar = "SELECT * FROM `clientes` WHERE `id_Cliente` = '" + ID_Current + "'";
+            String carga = "SELECT placa_Automovil FROM `automoviles` ORDER BY placa_Automovil AND `idCliente_Automovil` = '" + ID_Current + "'";
+            String telefonos = "SELECT * FROM `telefonos` WHERE `idCliente_Telefono` = '" + ID_Current + "'";
+
+            rs = (ResultSet) st.executeQuery(cargar);
+
+            String[] data = new String[8];
+
+            while (rs.next()) {
+                jTextField2.setText(rs.getString(1));
+                data[0] = rs.getString(1);
+                data[1] = rs.getString(2);
+                data[2] = rs.getString(3);
+                data[3] = rs.getString(4);
+                data[4] = rs.getString(5);
+                data[5] = rs.getString(6);
+                corr = rs.getString(7);
+                data[6] = rs.getString(7);//Correo
+                data[7] = rs.getString(8);
+            }
+
+            rs = (ResultSet) st.executeQuery(carga);
+
+            String[] data2 = new String[3];
+            Crear_cita_Combobox.addItem("Seleccione: ");
+            while (rs.next()) {
+                Crear_cita_Combobox.addItem(rs.getString(1));
+            }
+
+            rs = (ResultSet) st.executeQuery(telefonos);
+            while (rs.next()) {
+                jComboBox4.addItem(rs.getString(2));
+            }
+
+        } catch (Exception e) {
+        }
         this.Menu.setVisible(false);
         this.Crear_cita.pack();
         this.Crear_cita.setModal(true);
@@ -984,9 +1086,48 @@ public class main extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+
+        int validar = Integer.parseInt(JOptionPane.showInputDialog(null, "Esta seguro que quiere realizar esta cita? de ser asi ingrese 1 para SI, cualquier otro para NO"));
+        if (validar == 1) {
+            try {
+                String insert = "INSERT INTO `citas` (`placa_Automovil`, `idCliente_Automovil`, `modelo_Automovil`, `numeroMotor_Automovil`, `fechaEntrada_Cita`, `tipo_Cita`) VALUES ('" + Crear_cita_Combobox.getSelectedItem().toString() + "', '" + ID_Current + "', '" + jTextField3.getText() + "', '" + jTextField4.getText() + "', '" + dateChooserPanel1.getCurrent().getTime() + "', '" + jComboBox2.getSelectedItem().toString() + "')";
+                ps = (PreparedStatement) cn.prepareCall(insert);
+                ps.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Se ha registrado la cita correctamente, se le enviara un correo");
+                
+                SendMail();
+            } catch (Exception e) {
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "Ha cancelado la opcion de agregar Cita");
+        }
         this.Crear_cita.setVisible(false);
         this.Menu.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void Crear_cita_ComboboxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Crear_cita_ComboboxItemStateChanged
+        if (Crear_cita_Combobox.getSelectedIndex() != 0) {
+            try {
+                String cargar = "SELECT * FROM `clientes` WHERE `id_Cliente` = '" + ID_Current + "'";
+
+                String geted = (String) Crear_cita_Combobox.getSelectedItem();
+                //SELECT * FROM `automoviles` WHERE `placa_Automovil` = 'PDL69421' AND `idCliente_Automovil` = 'asd'
+                String carga = "SELECT * FROM `automoviles` WHERE `placa_Automovil` = '" + geted + "' AND `idCliente_Automovil` = '" + ID_Current + "'";
+
+                rs = (ResultSet) st.executeQuery(carga);
+
+                String[] data2 = new String[3];
+
+                while (rs.next()) {
+                    jTextField3.setText(rs.getString(3));
+                    jTextField4.setText(rs.getString(4));
+                }
+            } catch (Exception e) {
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Debe seleccionar una opcion");
+        }
+    }//GEN-LAST:event_Crear_cita_ComboboxItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -1199,5 +1340,42 @@ public class main extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Joven usted ha ingresado algo incorrecto o no exite su usuario");
         }
         return new String[0];
+    }
+
+    public static String Username = "cryaktenz@gmail.com";
+    public static String PassWord = "milton12";
+    String Mensage = "Muy buenas estimado su automovil ha sido ingresado";
+    String To = corr;
+    String Subject = "Sistema Automovil";
+
+    public void SendMail() {
+        Properties props = new Properties();
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.port", "587");
+
+        Session session = Session.getInstance(props,
+                new javax.mail.Authenticator() {
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(Username, PassWord);
+            }
+        });
+
+        try {
+
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(Username));
+            message.setRecipients(Message.RecipientType.TO,
+                    InternetAddress.parse(To));
+            message.setSubject(Subject);
+            message.setText(Mensage);
+
+            Transport.send(message);
+            JOptionPane.showMessageDialog(this, "Su mensaje ha sido enviado");
+
+        } catch (MessagingException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
