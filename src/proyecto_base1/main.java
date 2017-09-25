@@ -119,7 +119,6 @@ public class main extends javax.swing.JFrame {
         Crear_cuenta_AsesorMecánico_PrimerNombre = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
         Crear_cuenta_AsesorMecánico_NumeroTelefonoAsignado = new javax.swing.JTextField();
-        Usuario = new javax.swing.JLabel();
         Crear_cuenta_AsesorMecánico_Tipo = new javax.swing.JComboBox<>();
         Crear_cuenta_AsesorMecánico_BotonCrear = new javax.swing.JButton();
         jLabel23 = new javax.swing.JLabel();
@@ -131,6 +130,8 @@ public class main extends javax.swing.JFrame {
         jLabel45 = new javax.swing.JLabel();
         Crear_cuenta_AsesorMecánico_SegundoApellido = new javax.swing.JTextField();
         jLabel46 = new javax.swing.JLabel();
+        jLabel55 = new javax.swing.JLabel();
+        tf_usuarioEmpleado = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         Menu = new javax.swing.JDialog();
         jLabel25 = new javax.swing.JLabel();
@@ -160,6 +161,7 @@ public class main extends javax.swing.JFrame {
         dateChooserPanel2 = new datechooser.beans.DateChooserPanel();
         jButton14 = new javax.swing.JButton();
         jButton16 = new javax.swing.JButton();
+        jButton19 = new javax.swing.JButton();
         jLabel21 = new javax.swing.JLabel();
         Menu_Asesor = new javax.swing.JDialog();
         jLabel52 = new javax.swing.JLabel();
@@ -169,6 +171,7 @@ public class main extends javax.swing.JFrame {
         jComboBox7 = new javax.swing.JComboBox<>();
         jButton17 = new javax.swing.JButton();
         jButton15 = new javax.swing.JButton();
+        jButton20 = new javax.swing.JButton();
         jLabel51 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         login_botonEntrar = new javax.swing.JButton();
@@ -177,6 +180,7 @@ public class main extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jToggleButton1 = new javax.swing.JToggleButton();
+        jButton18 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         Crear_cuenta_cliente.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -418,7 +422,7 @@ public class main extends javax.swing.JFrame {
         jLabel18.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("Crear Cuenta");
-        Crear_cuenta_AsesorMecánico.getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 80, -1, -1));
+        Crear_cuenta_AsesorMecánico.getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 50, -1, -1));
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
@@ -431,11 +435,6 @@ public class main extends javax.swing.JFrame {
         jLabel20.setText("Número de teléfono asignado:");
         Crear_cuenta_AsesorMecánico.getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, -1, -1));
         Crear_cuenta_AsesorMecánico.getContentPane().add(Crear_cuenta_AsesorMecánico_NumeroTelefonoAsignado, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 230, 350, -1));
-
-        Usuario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        Usuario.setForeground(new java.awt.Color(255, 255, 255));
-        Usuario.setText("Tipo:");
-        Crear_cuenta_AsesorMecánico.getContentPane().add(Usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 280, -1, -1));
 
         Crear_cuenta_AsesorMecánico_Tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Asesor", "Mecánico" }));
         Crear_cuenta_AsesorMecánico.getContentPane().add(Crear_cuenta_AsesorMecánico_Tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 310, 110, -1));
@@ -482,6 +481,11 @@ public class main extends javax.swing.JFrame {
         jLabel46.setForeground(new java.awt.Color(255, 255, 255));
         jLabel46.setText("Tipo:");
         Crear_cuenta_AsesorMecánico.getContentPane().add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, -1, -1));
+
+        jLabel55.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel55.setText("Usuario");
+        Crear_cuenta_AsesorMecánico.getContentPane().add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, -1, -1));
+        Crear_cuenta_AsesorMecánico.getContentPane().add(tf_usuarioEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 100, 180, -1));
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_base1/black-wallpaper-png-scaled-1000.jpg"))); // NOI18N
         Crear_cuenta_AsesorMecánico.getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -603,6 +607,7 @@ public class main extends javax.swing.JFrame {
         jLabel50.setText("Estado:");
         Menu_mecanico.getContentPane().add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 180, -1, -1));
 
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "No Ingresado", "Ingresado", "En Reparacion", "Pendiente de Repuestos", "Listo", "Auto Retirado", "Cancelada" }));
         Menu_mecanico.getContentPane().add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, 210, -1));
 
         Menu_mecanico.getContentPane().add(jComboBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 210, -1));
@@ -613,6 +618,14 @@ public class main extends javax.swing.JFrame {
 
         jButton16.setText("Actualizar");
         Menu_mecanico.getContentPane().add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 420, -1, -1));
+
+        jButton19.setText("Modificar Cuenta");
+        jButton19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton19ActionPerformed(evt);
+            }
+        });
+        Menu_mecanico.getContentPane().add(jButton19, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 420, -1, -1));
 
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_base1/black-wallpaper-png-scaled-1000.jpg"))); // NOI18N
         Menu_mecanico.getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1002, 560));
@@ -643,6 +656,14 @@ public class main extends javax.swing.JFrame {
 
         jButton15.setText("Salir");
         Menu_Asesor.getContentPane().add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 20, -1, -1));
+
+        jButton20.setText("Modifciar cuenta");
+        jButton20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton20ActionPerformed(evt);
+            }
+        });
+        Menu_Asesor.getContentPane().add(jButton20, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 210, -1, -1));
 
         jLabel51.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_base1/black-wallpaper-png-scaled-1000.jpg"))); // NOI18N
         Menu_Asesor.getContentPane().add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1001, 559));
@@ -686,6 +707,14 @@ public class main extends javax.swing.JFrame {
         });
         getContentPane().add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 20, -1, -1));
 
+        jButton18.setText("Crear Super Cuenta");
+        jButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton18ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, -1, -1));
+
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_base1/IMG-13.jpg"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -696,13 +725,33 @@ public class main extends javax.swing.JFrame {
         ID_Current = "";
         ID_Current = login_usuario.getText();
         if (login_usuario.getText().equals("") || login_contraseña.getText().equals("")) {
+
             JOptionPane.showMessageDialog(null, "No ha ingresado los datos completos");
         } else if (LoginData(login_usuario.getText(), login_contraseña.getText())[0].toString().equals(ID_Current)) {
-            this.setVisible(false);
-            this.Menu.pack();
-            this.Menu.setModal(true);
-            this.Menu.setLocationRelativeTo(this);
-            this.Menu.setVisible(true);
+//            this.setVisible(false);
+//            this.Menu.pack();
+//            this.Menu.setModal(true);
+//            this.Menu.setLocationRelativeTo(this);
+//            this.Menu.setVisible(true);
+            if (LoginData(login_usuario.getText(), login_contraseña.getText())[1].toString().equals("Cliente")) {
+                this.setVisible(false);
+                this.Menu.pack();
+                this.Menu.setModal(true);
+                this.Menu.setLocationRelativeTo(this);
+                this.Menu.setVisible(true);
+            } else if (LoginData(login_usuario.getText(), login_contraseña.getText())[1].toString().equals("Mecanico")) {
+                this.setVisible(false);
+                this.Menu_mecanico.pack();
+                this.Menu_mecanico.setModal(true);
+                this.Menu_mecanico.setLocationRelativeTo(this);
+                this.Menu_mecanico.setVisible(true);
+            } else if (LoginData(login_usuario.getText(), login_contraseña.getText())[1].toString().equals("Asesor")) {
+                this.setVisible(false);
+                this.Menu_Asesor.pack();
+                this.Menu_Asesor.setModal(true);
+                this.Menu_Asesor.setLocationRelativeTo(this);
+                this.Menu_Asesor.setVisible(true);
+            }
         }
         //LoginData(login_usuario.getText(), login_contraseña.getText());
         login_usuario.setText("");
@@ -808,24 +857,70 @@ public class main extends javax.swing.JFrame {
 
     private void Crear_cuenta_AsesorMecánico_BotonCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Crear_cuenta_AsesorMecánico_BotonCrearActionPerformed
         String datos = (String) Crear_cuenta_AsesorMecánico_Tipo.getSelectedItem();
-        String insertar = "insert into empleados (id_Empleado,idAsesor_Empleado,primerNombre_Empleado,segundoNombre_Empleado,primerApellido_Empleado,segundoApellido_Empleado,telefonoAsignado_Empleado,contra_Empleado) values (?,?,?,?,?)";
-        try {
-            ps = (PreparedStatement) cn.prepareCall(insertar);
-            ps.setString(1, null);
-            ps.setString(2, Crear_cuenta_AsesorMecánico_PrimerNombre.getText());
-            ps.setString(3, Crear_cuenta_AsesorMecánico_NumeroTelefonoAsignado.getText());
-            ps.setString(4, datos);
-            ps.setString(5, Crear_cuenta_AsesorMecánico_Contraseña.getText());
 
-            int registrar = ps.executeUpdate();
-            if (registrar > 0) {
-                this.Crear_cuenta_AsesorMecánico.setVisible(false);
-                JOptionPane.showMessageDialog(null, "Cuenta creada exitosamente");
-                this.setVisible(true);
+        try {
+            if (this.Crear_cuenta_AsesorMecánico_BotonCrear.getText().equals("Crear")) {
+                String insertar = "insert into empleados (id_Empleado,idAsesor_Empleado,primerNombre_Empleado,segundoNombre_Empleado,primerApellido_Empleado,segundoApellido_Empleado,telefonoAsignado_Empleado,contra_Empleado) values (?,?,?,?,?,?,?,?)";
+                try {
+                    ps = (PreparedStatement) cn.prepareCall(insertar);
+                    ps.setString(1, tf_usuarioEmpleado.getText());
+                    if (Crear_cuenta_AsesorMecánico_Tipo.getSelectedItem().toString().equals("Asesor")) {
+                        ps.setString(2, null);
+                    } else {
+                        ps.setString(2, "zxc");
+                    }
+                    ps.setString(3, Crear_cuenta_AsesorMecánico_PrimerNombre.getText());
+                    ps.setString(4, Crear_cuenta_AsesorMecánico_SegundoNombre.getText());
+                    ps.setString(5, Crear_cuenta_AsesorMecánico_PrimerApellido.getText());
+                    ps.setString(6, Crear_cuenta_AsesorMecánico_SegundoApellido.getText());
+                    ps.setString(7, Crear_cuenta_AsesorMecánico_NumeroTelefonoAsignado.getText());
+                    ps.setString(8, Crear_cuenta_AsesorMecánico_Contraseña.getText());
+
+                    int registrar = ps.executeUpdate();
+                    if (registrar > 0) {
+                        this.Crear_cuenta_AsesorMecánico.setVisible(false);
+                        JOptionPane.showMessageDialog(null, "Cuenta creada exitosamente");
+                        this.setVisible(true);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "La cuenta NO FUE REGISTRADA, FAVOR VER CODIGO");
+                    }
+                } catch (Exception e) {
+                }
+
             } else {
-                JOptionPane.showMessageDialog(null, "La cuenta NO FUE REGISTRADA, FAVOR VER CODIGO");
+
+                try {
+                    int registrar;
+                    System.out.println(ID_Current);
+                    String us;
+                    if (Crear_cuenta_AsesorMecánico_Tipo.getSelectedItem().toString().equals("Asesor")) {
+                        us = null;
+                    } else {
+                        us = "'zxc'";
+                    }
+                    ps = (PreparedStatement) cn.prepareCall("UPDATE `empleados` SET  idAsesor_Empleado = '" + us + "',contra_Empleado = '" + Crear_cuenta_AsesorMecánico_Contraseña.getText() + "', id_Empleado = '" + tf_usuarioEmpleado.getText() + "', telefonoAsignado_Empleado = '" + Crear_cuenta_AsesorMecánico_NumeroTelefonoAsignado.getText() + "', primerApellido_Empleado = '" + Crear_cuenta_cliente_PrimerApellido.getText() + "', primerNombre_Empleado = '" + Crear_cuenta_AsesorMecánico_PrimerNombre.getText() + "', segundoApellido_Empleado = '" + Crear_cuenta_AsesorMecánico_SegundoApellido.getText() + "', segundoNombre_Empleado = '" + Crear_cuenta_AsesorMecánico_SegundoNombre.getText() + "'  WHERE `empleados`.`id_Cliente` = '" + ID_Current + "'");
+                    registrar = ps.executeUpdate();
+
+                    if (registrar > 0) {
+                        tf_usuarioEmpleado.setText("");
+                        Crear_cuenta_AsesorMecánico_PrimerNombre.setText("");
+                        Crear_cuenta_AsesorMecánico_SegundoNombre.setText("");
+                        Crear_cuenta_AsesorMecánico_PrimerApellido.setText("");
+                        Crear_cuenta_AsesorMecánico_SegundoApellido.setText("");
+                        Crear_cuenta_AsesorMecánico_NumeroTelefonoAsignado.setText("");
+                        Crear_cuenta_AsesorMecánico_Contraseña.setText("");
+
+                        JOptionPane.showMessageDialog(null, "Cuenta modificada exitosamente");
+                        this.setVisible(true);
+                    } else {
+
+                    }
+                } catch (Exception e) {
+                    e.getMessage();
+                }
             }
         } catch (Exception e) {
+
         }
 
         /*try {
@@ -1027,7 +1122,7 @@ public class main extends javax.swing.JFrame {
         Agregar_Carro_NumeroMotor.setText("");
         Agregar_Carro_Placa.setText("");
     }//GEN-LAST:event_Agregar_Carro_BotonListoActionPerformed
-String corr;
+    String corr;
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         // TODO add your handling code here:
         DefaultComboBoxModel mode = new DefaultComboBoxModel();
@@ -1086,21 +1181,34 @@ String corr;
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        sendMail();
+        try {
 
-        int validar = Integer.parseInt(JOptionPane.showInputDialog(null, "Esta seguro que quiere realizar esta cita? de ser asi ingrese 1 para SI, cualquier otro para NO"));
-        if (validar == 1) {
+            System.out.println("entro");
+            //INSERT INTO `citas` (`id_Cita`, `idCliente_Cita`, `placaVehiculo_Cita`, `idEmpleado_Cita`, `fechaEntrada_Cita`, `tipo_Cita`, `estado_Cita`, `fechaEntrega_Cita`) VALUES ('', 'abc', 'PDL1203', 'qwe', '2017-09-26', 'Mantenimiento', '', '');
+            String ins = "INSERT INTO `citas` (`id_Cita`, `idCliente_Cita`, `placaVehiculo_Cita`, `idEmpleado_Cita`, `fechaEntrada_Cita`, `tipo_Cita`, `estado_Cita`, `fechaEntrega_Cita`) VALUES ('', '"+ID_Current+"', '"+Crear_cuenta_cliente_ComboBox.getSelectedItem()+"', '', '2017-09-26', '"+jComboBox2.getSelectedItem()+"', '', '');";
+            //String insert = "INSERT INTO `citas` (`placa_Automovil`, `idCliente_Automovil`, `modelo_Automovil`, `numeroMotor_Automovil`, `fechaEntrada_Cita`, `tipo_Cita`) VALUES ('" + Crear_cita_Combobox.getSelectedItem().toString() + "', '" + ID_Current + "', '" + jTextField3.getText() + "', '" + jTextField4.getText() + "', '" + dateChooserPanel1.getCurrent().getTime() + "', '" + jComboBox2.getSelectedItem().toString() + "')";
+            ps = (PreparedStatement) cn.prepareCall(ins);
+            ps.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Se ha registrado la cita correctamente, se le enviara un correo");
+        } catch (Exception e) {
+        }
+        String validar = JOptionPane.showInputDialog(null, "Esta seguro que quiere realizar esta cita? de ser asi ingrese 1 para SI, cualquier otro para NO");
+        System.out.println(validar);
+        /*
+        if (true) {
             try {
+                SendMail();
+                System.out.println("entro");
                 String insert = "INSERT INTO `citas` (`placa_Automovil`, `idCliente_Automovil`, `modelo_Automovil`, `numeroMotor_Automovil`, `fechaEntrada_Cita`, `tipo_Cita`) VALUES ('" + Crear_cita_Combobox.getSelectedItem().toString() + "', '" + ID_Current + "', '" + jTextField3.getText() + "', '" + jTextField4.getText() + "', '" + dateChooserPanel1.getCurrent().getTime() + "', '" + jComboBox2.getSelectedItem().toString() + "')";
                 ps = (PreparedStatement) cn.prepareCall(insert);
                 ps.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Se ha registrado la cita correctamente, se le enviara un correo");
-                
-                SendMail();
             } catch (Exception e) {
             }
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "Ha cancelado la opcion de agregar Cita");
-        }
+        }*/
         this.Crear_cita.setVisible(false);
         this.Menu.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -1128,6 +1236,33 @@ String corr;
             JOptionPane.showMessageDialog(null, "Debe seleccionar una opcion");
         }
     }//GEN-LAST:event_Crear_cita_ComboboxItemStateChanged
+
+    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+        Crear_cuenta_AsesorMecánico_BotonCrear.setText("Crear");
+        this.setVisible(false);
+        this.Crear_cuenta_AsesorMecánico.pack();
+        this.Crear_cuenta_AsesorMecánico.setModal(true);
+        this.Crear_cuenta_AsesorMecánico.setLocationRelativeTo(this);
+        this.Crear_cuenta_AsesorMecánico.setVisible(true);
+    }//GEN-LAST:event_jButton18ActionPerformed
+
+    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+        Crear_cuenta_AsesorMecánico_BotonCrear.setText("Modificar");
+        this.setVisible(false);
+        this.Crear_cuenta_AsesorMecánico.pack();
+        this.Crear_cuenta_AsesorMecánico.setModal(true);
+        this.Crear_cuenta_AsesorMecánico.setLocationRelativeTo(this);
+        this.Crear_cuenta_AsesorMecánico.setVisible(true);
+    }//GEN-LAST:event_jButton19ActionPerformed
+
+    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+        Crear_cuenta_AsesorMecánico_BotonCrear.setText("Modificar");
+        this.setVisible(false);
+        this.Crear_cuenta_AsesorMecánico.pack();
+        this.Crear_cuenta_AsesorMecánico.setModal(true);
+        this.Crear_cuenta_AsesorMecánico.setLocationRelativeTo(this);
+        this.Crear_cuenta_AsesorMecánico.setVisible(true);
+    }//GEN-LAST:event_jButton20ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1204,7 +1339,6 @@ String corr;
     private javax.swing.JDialog Menu;
     private javax.swing.JDialog Menu_Asesor;
     private javax.swing.JDialog Menu_mecanico;
-    private javax.swing.JLabel Usuario;
     private datechooser.beans.DateChooserPanel dateChooserPanel1;
     private datechooser.beans.DateChooserPanel dateChooserPanel2;
     private javax.swing.JButton jButton1;
@@ -1216,7 +1350,10 @@ String corr;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
+    private javax.swing.JButton jButton18;
+    private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
@@ -1281,6 +1418,7 @@ String corr;
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -1296,6 +1434,7 @@ String corr;
     private javax.swing.JButton login_botonEntrar;
     private javax.swing.JPasswordField login_contraseña;
     private javax.swing.JTextField login_usuario;
+    private javax.swing.JTextField tf_usuarioEmpleado;
     // End of variables declaration//GEN-END:variables
 
     Conectar cc = new Conectar();
@@ -1330,7 +1469,7 @@ String corr;
                     if (checkAsesor.equals("Y")) {
                         return new String[]{ID, "Asesor"};
                     } else {
-                        return new String[]{ID, "Empleado"};
+                        return new String[]{ID, "Mecanico"};
                     }
                 }
 
@@ -1342,10 +1481,11 @@ String corr;
         return new String[0];
     }
 
-    public static String Username = "cryaktenz@gmail.com";
+    
+    /*public static String Username = "crysaktenz@gmail.com";
     public static String PassWord = "milton12";
     String Mensage = "Muy buenas estimado su automovil ha sido ingresado";
-    String To = corr;
+    String To = "jordi.mairena@gmail.com";
     String Subject = "Sistema Automovil";
 
     public void SendMail() {
@@ -1358,18 +1498,20 @@ String corr;
         Session session = Session.getInstance(props,
                 new javax.mail.Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(Username, PassWord);
+                return new PasswordAuthentication("crysaktenz@gmail.com", "milton12");
+
             }
+
         });
 
         try {
 
             Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress(Username));
+            message.setFrom(new InternetAddress("crysaktenz@gmail.com"));
             message.setRecipients(Message.RecipientType.TO,
-                    InternetAddress.parse(To));
-            message.setSubject(Subject);
-            message.setText(Mensage);
+                    InternetAddress.parse("jordi.mairena@gmail.com"));
+            message.setSubject("Sistema Automovil");
+            message.setText("Muy buenas estimado su automovil ha sido ingresado");
 
             Transport.send(message);
             JOptionPane.showMessageDialog(this, "Su mensaje ha sido enviado");
@@ -1377,5 +1519,42 @@ String corr;
         } catch (MessagingException e) {
             throw new RuntimeException(e);
         }
+    }*/
+    
+    public void sendMail(){
+        final String username = "crysaktenz@gmail.com";
+		final String password = "milton12";
+
+		Properties props = new Properties();
+		props.put("mail.smtp.auth", "true");
+		props.put("mail.smtp.starttls.enable", "true");
+		props.put("mail.smtp.host", "smtp.gmail.com");
+		props.put("mail.smtp.port", "587");
+
+		Session session = Session.getInstance(props,
+		  new javax.mail.Authenticator() {
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication(username, password);
+			}
+		  });
+
+		try {
+
+			Message message = new MimeMessage(session);
+			message.setFrom(new InternetAddress("crysaktenz@gmail.com"));
+			message.setRecipients(Message.RecipientType.TO,
+				InternetAddress.parse("crysaktenz@gmail.com"));
+			message.setSubject("Testing Subject");
+			message.setText("Dear Mail Crawler,"
+				+ "\n\n No spam to my email, please!");
+
+			Transport.send(message);
+
+			System.out.println("Done");
+
+		} catch (MessagingException e) {
+			throw new RuntimeException(e);
+		}
     }
+   
 }
