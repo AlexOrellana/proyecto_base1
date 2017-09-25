@@ -65,7 +65,6 @@ public class main extends javax.swing.JFrame {
         jSpinner1 = new javax.swing.JSpinner();
         jSpinner2 = new javax.swing.JSpinner();
         jLabel31 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         jComboBox4 = new javax.swing.JComboBox<>();
@@ -203,9 +202,6 @@ public class main extends javax.swing.JFrame {
         jLabel31.setForeground(new java.awt.Color(255, 255, 255));
         jLabel31.setText(":");
         Crear_cita.getContentPane().add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 160, 20, -1));
-
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AM", "PM" }));
-        Crear_cita.getContentPane().add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 160, -1, -1));
 
         jLabel32.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel32.setForeground(new java.awt.Color(255, 255, 255));
@@ -609,7 +605,6 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
