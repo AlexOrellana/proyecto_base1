@@ -48,7 +48,7 @@ public class Conectar {
     public Connection conexion(){
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            conect = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","");
+            conect = DriverManager.getConnection("jdbc:mysql://localhost/dbfina","root","");
             JOptionPane.showMessageDialog(null, "Conectado");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error al conectar"+e);
