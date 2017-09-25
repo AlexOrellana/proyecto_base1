@@ -105,7 +105,18 @@ public class main extends javax.swing.JFrame {
         Menu = new javax.swing.JDialog();
         jLabel25 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
         jLabel24 = new javax.swing.JLabel();
+        Carros_cliente = new javax.swing.JDialog();
+        jLabel28 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        jButton8 = new javax.swing.JButton();
+        jLabel27 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         login_botonEntrar = new javax.swing.JButton();
         login_usuario = new javax.swing.JTextField();
@@ -340,16 +351,69 @@ public class main extends javax.swing.JFrame {
         jLabel25.setText("Menu");
         Menu.getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, -1, -1));
 
-        jButton1.setText("Modificar mi cuenta");
+        jButton1.setText("Eliminar mi cuenta");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
             }
         });
-        Menu.getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, -1, -1));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        Menu.getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, 130, -1));
+
+        jButton3.setText("Modificar mi cuenta");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
+        Menu.getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, 130, -1));
+
+        jButton4.setText("Salir");
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
+        Menu.getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, 130, -1));
+
+        jButton5.setText("Carros");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
+        Menu.getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 130, -1));
 
         jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_base1/abstract-black-geometric-line-pattern-34-iphone-7-plus-wallpaper-576x1024.jpg"))); // NOI18N
         Menu.getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 365, 633));
+
+        Carros_cliente.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel28.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel28.setText("Mis carros");
+        Carros_cliente.getContentPane().add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, -1, -1));
+
+        Carros_cliente.getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, 270, -1));
+
+        jButton6.setText("Modificar");
+        Carros_cliente.getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, -1, -1));
+
+        jButton7.setText("Eliminar");
+        Carros_cliente.getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 210, -1, -1));
+
+        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        Carros_cliente.getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 70, 180));
+
+        jButton8.setText("Agregar");
+        Carros_cliente.getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, -1, -1));
+
+        jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_base1/abstract-black-geometric-line-pattern-34-iphone-7-plus-wallpaper-576x1024.jpg"))); // NOI18N
+        Carros_cliente.getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 573, 361));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -537,6 +601,22 @@ public class main extends javax.swing.JFrame {
         this.Crear_cuenta_cliente_ComboBox.setModel(modelo);
     }//GEN-LAST:event_Crear_cuenta_cliente_BotonAgregarActionPerformed
 
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4MouseClicked
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5MouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -583,6 +663,7 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JTextField Agregar_Carro_Modelo;
     private javax.swing.JTextField Agregar_Carro_NumeroMotor;
     private javax.swing.JTextField Agregar_Carro_Placa;
+    private javax.swing.JDialog Carros_cliente;
     private javax.swing.JDialog Crear_cita;
     private javax.swing.JComboBox<String> Crear_cita_Combobox;
     private javax.swing.JDialog Crear_cuenta_AsesorMecánico;
@@ -604,6 +685,13 @@ public class main extends javax.swing.JFrame {
     private datechooser.beans.DateChooserPanel dateChooserPanel1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel1;
@@ -625,6 +713,8 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
@@ -642,6 +732,7 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JSpinner jSpinner2;
     private javax.swing.JTextField jTextField1;
