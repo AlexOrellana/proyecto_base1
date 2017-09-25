@@ -57,6 +57,28 @@ public class main extends javax.swing.JFrame {
         Crear_cuenta_cliente_numeros = new javax.swing.JFormattedTextField();
         jLabel6 = new javax.swing.JLabel();
         Crear_cita = new javax.swing.JDialog();
+        jLabel26 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        dateChooserPanel1 = new datechooser.beans.DateChooserPanel();
+        jSpinner1 = new javax.swing.JSpinner();
+        jSpinner2 = new javax.swing.JSpinner();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jComboBox4 = new javax.swing.JComboBox<>();
+        jLabel34 = new javax.swing.JLabel();
+        Crear_cita_Combobox = new javax.swing.JComboBox<>();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
+        jLabel37 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jLabel38 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         Agregar_Carro = new javax.swing.JDialog();
         jLabel13 = new javax.swing.JLabel();
@@ -153,8 +175,82 @@ public class main extends javax.swing.JFrame {
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_base1/black-wallpaper-png-scaled-1000.jpg"))); // NOI18N
         Crear_cuenta_cliente.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, -1, -1));
 
+        Crear_cita.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel26.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel26.setText("Crear Cita");
+        Crear_cita.getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 70, -1, -1));
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mantenimiento", "Reparación" }));
+        Crear_cita.getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 220, 160, -1));
+
+        jLabel29.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel29.setText("ID:");
+        Crear_cita.getContentPane().add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, -1));
+
+        jLabel30.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel30.setText("Fecha:");
+        Crear_cita.getContentPane().add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, -1, -1));
+        Crear_cita.getContentPane().add(dateChooserPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 320, 210));
+        Crear_cita.getContentPane().add(jSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 160, 40, -1));
+        Crear_cita.getContentPane().add(jSpinner2, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 160, 40, -1));
+
+        jLabel31.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel31.setText(":");
+        Crear_cita.getContentPane().add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 160, 20, -1));
+
+        jLabel32.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel32.setText("Hora:");
+        Crear_cita.getContentPane().add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 140, -1, -1));
+
+        jLabel33.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel33.setText("Teléfono de contacto:");
+        Crear_cita.getContentPane().add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 260, -1, -1));
+
+        Crear_cita.getContentPane().add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 280, 160, -1));
+
+        jLabel34.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel34.setText("Tipo:");
+        Crear_cita.getContentPane().add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 200, -1, -1));
+
+        Crear_cita.getContentPane().add(Crear_cita_Combobox, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 320, -1));
+
+        jLabel35.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel35.setText("Modelo:");
+        Crear_cita.getContentPane().add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, -1, -1));
+
+        jLabel36.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel36.setText("Cliente:");
+        Crear_cita.getContentPane().add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
+        Crear_cita.getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 60, 10));
+        Crear_cita.getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 60, 10));
+
+        jButton2.setText("Crear");
+        Crear_cita.getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 470, -1, -1));
+
+        jLabel37.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel37.setText("Placa del carro:");
+        Crear_cita.getContentPane().add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
+        Crear_cita.getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 280, -1));
+        Crear_cita.getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 280, -1));
+
+        jLabel38.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel38.setText("Número de motor:");
+        Crear_cita.getContentPane().add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
+
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_base1/black-wallpaper-png-scaled-1000.jpg"))); // NOI18N
-        Crear_cita.getContentPane().add(jLabel5, java.awt.BorderLayout.CENTER);
+        Crear_cita.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1001, 555));
 
         Agregar_Carro.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -438,7 +534,6 @@ public class main extends javax.swing.JFrame {
         for (int i = 0; i < numeros.size();i++) {
                 modelo.addElement(numeros.get(i));
         }
-        modelo.addElement(this.Crear_cuenta_cliente_numeros.getText());
         this.Crear_cuenta_cliente_ComboBox.setModel(modelo);
     }//GEN-LAST:event_Crear_cuenta_cliente_BotonAgregarActionPerformed
 
@@ -489,6 +584,7 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JTextField Agregar_Carro_NumeroMotor;
     private javax.swing.JTextField Agregar_Carro_Placa;
     private javax.swing.JDialog Crear_cita;
+    private javax.swing.JComboBox<String> Crear_cita_Combobox;
     private javax.swing.JDialog Crear_cuenta_AsesorMecánico;
     private javax.swing.JButton Crear_cuenta_AsesorMecánico_BotonCrear;
     private javax.swing.JTextField Crear_cuenta_AsesorMecánico_Contraseña;
@@ -505,7 +601,11 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JTextField Crear_cuenta_cliente_NombreCompleto;
     private javax.swing.JFormattedTextField Crear_cuenta_cliente_numeros;
     private javax.swing.JDialog Menu;
+    private datechooser.beans.DateChooserPanel dateChooserPanel1;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -524,13 +624,30 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JSpinner jSpinner2;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JButton login_botonEntrar;
     private javax.swing.JPasswordField login_contraseña;
