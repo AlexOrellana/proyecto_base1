@@ -605,13 +605,37 @@ public class main extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "La cuenta NO FUE REGISTRADA, FAVOR VER CODIGO");
                 }*/
             } else {
-                this.Crear_cuenta_cliente.setVisible(false);
-                JOptionPane.showMessageDialog(null, "Cuenta modificada exitosamente");
-                this.Menu.setVisible(true);
+                
+                try{
+                    int registrar;
+                    ps = (PreparedStatement) cn.prepareCall("UPDATE `clientes` SET contra_Cliente = '"+Crear_cuenta_cliente_Contraseña.getText()+",correoElectronico_Cliente = '"+Crear_cuenta_cliente_CorreoElectronico+"', direccion_Cliente = '"+Crear_cuenta_cliente_Direccion.getText()+"', primerApellido_Cliente = '"+Crear_cuenta_cliente_PrimerApellido.getText()+"', primerNombre_Cliente = '"+Crear_cuenta_cliente_PrimerNombre.getText()+"', segundoApellido_Cliente = '"+Crear_cuenta_cliente_SegundoApellido.getText()+"', segundoNombre_Cliente = '"+Crear_cuenta_cliente_SegundoNombre+"'  'WHERE `clientes`.`id_Cliente` = '" + ID_Current + "'");
+                    registrar = ps.executeUpdate();
+                    
+                    
+                    if (registrar > 0) {
+                        Crear_cuenta_cliente_Usuario.setText("");
+                        Crear_cuenta_cliente_PrimerNombre.setText("");
+                        Crear_cuenta_cliente_SegundoNombre.setText("");
+                        Crear_cuenta_cliente_PrimerApellido.setText("");
+                        Crear_cuenta_cliente_SegundoApellido.setText("");
+                        Crear_cuenta_cliente_Direccion.setText("");
+                        Crear_cuenta_cliente_CorreoElectronico.setText("");
+                        Crear_cuenta_cliente_Contraseña.setText("");
+                        this.Crear_cuenta_cliente_numeros.setText("");
+                        numeros = new ArrayList();
+                        this.Crear_cuenta_cliente_ComboBox.setModel(new DefaultComboBoxModel());
+                        this.Crear_cuenta_cliente.setVisible(false);
+                        JOptionPane.showMessageDialog(null, "Cuenta modificada exitosamente");
+                        this.Menu.setVisible(true);
+                    }
+                } catch (Exception e) {
+                    e.getMessage();
+                }
             }
-        } catch (Exception e) {
-            e.getMessage();
+        }catch(Exception e){
+            
         }
+        
 
     }//GEN-LAST:event_Crear_cuenta_cliente_BotonCrearActionPerformed
 
