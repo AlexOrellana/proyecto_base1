@@ -43,7 +43,7 @@ public class main extends javax.swing.JFrame {
         Crear_cuenta_cliente = new javax.swing.JDialog();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        Crear_cuenta_cliente_NombreCompleto = new javax.swing.JTextField();
+        Crear_cuenta_cliente_PrimerNombre = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         Crear_cuenta_cliente_ComboBox = new javax.swing.JComboBox<>();
         Crear_cuenta_cliente_BotonAgregar = new javax.swing.JButton();
@@ -55,6 +55,14 @@ public class main extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         Crear_cuenta_cliente_Contraseña = new javax.swing.JTextField();
         Crear_cuenta_cliente_numeros = new javax.swing.JFormattedTextField();
+        jLabel39 = new javax.swing.JLabel();
+        Crear_cuenta_cliente_SegundoNombre = new javax.swing.JTextField();
+        jLabel40 = new javax.swing.JLabel();
+        Crear_cuenta_cliente_PrimerApellido = new javax.swing.JTextField();
+        Crear_cuenta_cliente_SegundoApellido = new javax.swing.JTextField();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        Crear_cuenta_cliente_Usuario = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         Crear_cita = new javax.swing.JDialog();
         jLabel26 = new javax.swing.JLabel();
@@ -93,14 +101,21 @@ public class main extends javax.swing.JFrame {
         Crear_cuenta_AsesorMecánico = new javax.swing.JDialog();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        Crear_cuenta_AsesorMecánico_NombreCompleto = new javax.swing.JTextField();
+        Crear_cuenta_AsesorMecánico_PrimerNombre = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
         Crear_cuenta_AsesorMecánico_NumeroTelefonoAsignado = new javax.swing.JTextField();
-        jLabel21 = new javax.swing.JLabel();
+        Usuario = new javax.swing.JLabel();
         Crear_cuenta_AsesorMecánico_Tipo = new javax.swing.JComboBox<>();
         Crear_cuenta_AsesorMecánico_BotonCrear = new javax.swing.JButton();
         jLabel23 = new javax.swing.JLabel();
         Crear_cuenta_AsesorMecánico_Contraseña = new javax.swing.JTextField();
+        jLabel44 = new javax.swing.JLabel();
+        Crear_cuenta_AsesorMecánico_PrimerApellido = new javax.swing.JTextField();
+        jLabel43 = new javax.swing.JLabel();
+        Crear_cuenta_AsesorMecánico_SegundoNombre = new javax.swing.JTextField();
+        jLabel45 = new javax.swing.JLabel();
+        Crear_cuenta_AsesorMecánico_SegundoApellido = new javax.swing.JTextField();
+        jLabel46 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         Menu = new javax.swing.JDialog();
         jLabel25 = new javax.swing.JLabel();
@@ -137,11 +152,11 @@ public class main extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Crear Cuenta");
         Crear_cuenta_cliente.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 80, -1, -1));
-        Crear_cuenta_cliente.getContentPane().add(Crear_cuenta_cliente_NombreCompleto, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 160, 350, -1));
+        Crear_cuenta_cliente.getContentPane().add(Crear_cuenta_cliente_PrimerNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 160, 90, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Nombre Completo:");
+        jLabel9.setText("Primer Nombre");
         Crear_cuenta_cliente.getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, -1, -1));
 
         Crear_cuenta_cliente.getContentPane().add(Crear_cuenta_cliente_ComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, 270, -1));
@@ -182,6 +197,29 @@ public class main extends javax.swing.JFrame {
 
         Crear_cuenta_cliente_numeros.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("####-####"))));
         Crear_cuenta_cliente.getContentPane().add(Crear_cuenta_cliente_numeros, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, 270, -1));
+
+        jLabel39.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel39.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel39.setText("Segundo Nombre");
+        Crear_cuenta_cliente.getContentPane().add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 140, -1, -1));
+        Crear_cuenta_cliente.getContentPane().add(Crear_cuenta_cliente_SegundoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 160, 90, -1));
+
+        jLabel40.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel40.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel40.setText("Primer Apellido");
+        Crear_cuenta_cliente.getContentPane().add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 140, -1, -1));
+        Crear_cuenta_cliente.getContentPane().add(Crear_cuenta_cliente_PrimerApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 160, 90, -1));
+        Crear_cuenta_cliente.getContentPane().add(Crear_cuenta_cliente_SegundoApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 160, 90, -1));
+
+        jLabel41.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel41.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel41.setText("Segundo Apellido");
+        Crear_cuenta_cliente.getContentPane().add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 140, -1, -1));
+
+        jLabel42.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel42.setText("Usuario:");
+        Crear_cuenta_cliente.getContentPane().add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, -1, -1));
+        Crear_cuenta_cliente.getContentPane().add(Crear_cuenta_cliente_Usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 120, 240, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_base1/black-wallpaper-png-scaled-1000.jpg"))); // NOI18N
         Crear_cuenta_cliente.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, -1, -1));
@@ -307,9 +345,9 @@ public class main extends javax.swing.JFrame {
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel19.setText("Nombre completo:");
+        jLabel19.setText("Primer Nombre");
         Crear_cuenta_AsesorMecánico.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 140, -1, -1));
-        Crear_cuenta_AsesorMecánico.getContentPane().add(Crear_cuenta_AsesorMecánico_NombreCompleto, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 160, 350, -1));
+        Crear_cuenta_AsesorMecánico.getContentPane().add(Crear_cuenta_AsesorMecánico_PrimerNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 160, 90, -1));
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
@@ -317,10 +355,10 @@ public class main extends javax.swing.JFrame {
         Crear_cuenta_AsesorMecánico.getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, -1, -1));
         Crear_cuenta_AsesorMecánico.getContentPane().add(Crear_cuenta_AsesorMecánico_NumeroTelefonoAsignado, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 230, 350, -1));
 
-        jLabel21.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel21.setText("Tipo:");
-        Crear_cuenta_AsesorMecánico.getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, -1, -1));
+        Usuario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        Usuario.setForeground(new java.awt.Color(255, 255, 255));
+        Usuario.setText("Tipo:");
+        Crear_cuenta_AsesorMecánico.getContentPane().add(Usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 280, -1, -1));
 
         Crear_cuenta_AsesorMecánico_Tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Asesor", "Mecánico" }));
         Crear_cuenta_AsesorMecánico.getContentPane().add(Crear_cuenta_AsesorMecánico_Tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 310, 110, -1));
@@ -344,6 +382,29 @@ public class main extends javax.swing.JFrame {
             }
         });
         Crear_cuenta_AsesorMecánico.getContentPane().add(Crear_cuenta_AsesorMecánico_Contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 380, 350, -1));
+
+        jLabel44.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel44.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel44.setText("Primer Apellido");
+        Crear_cuenta_AsesorMecánico.getContentPane().add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 140, -1, -1));
+        Crear_cuenta_AsesorMecánico.getContentPane().add(Crear_cuenta_AsesorMecánico_PrimerApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 160, 90, -1));
+
+        jLabel43.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel43.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel43.setText("Segundo Nombre");
+        Crear_cuenta_AsesorMecánico.getContentPane().add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 140, -1, -1));
+        Crear_cuenta_AsesorMecánico.getContentPane().add(Crear_cuenta_AsesorMecánico_SegundoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 160, 110, -1));
+
+        jLabel45.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel45.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel45.setText("Segundo Apellido");
+        Crear_cuenta_AsesorMecánico.getContentPane().add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 140, -1, -1));
+        Crear_cuenta_AsesorMecánico.getContentPane().add(Crear_cuenta_AsesorMecánico_SegundoApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 160, 110, -1));
+
+        jLabel46.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel46.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel46.setText("Tipo:");
+        Crear_cuenta_AsesorMecánico.getContentPane().add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, -1, -1));
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_base1/black-wallpaper-png-scaled-1000.jpg"))); // NOI18N
         Crear_cuenta_AsesorMecánico.getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -474,18 +535,24 @@ public class main extends javax.swing.JFrame {
 //                Connection miConexion;
 //                miConexion = Conectar.GetConnetion();
                 String datos = (String) Crear_cuenta_cliente_ComboBox.getSelectedItem();
-                String insertar = "insert into cliente (ID_Cliente,Nombre,Telefono,Direccion,Correo,Contrasena) values (?,?,?,?,?,?)";
+                String insertar = "insert into clientes (id_Cliente,primerNombre_Cliente,segundoNombre_Cliente,primerApellido_Cliente,segundoApellido_Cliente,direccion_Cliente,correoElectronico_Cliente,contra_Cliente) values (?,?,?,?,?,?,?,?)";
                 try {
                     ps = (PreparedStatement) cn.prepareCall(insertar);
-                    ps.setString(1, null);
-                    ps.setString(2, Crear_cuenta_cliente_NombreCompleto.getText());
-                    ps.setString(3, datos);
-                    ps.setString(4, Crear_cuenta_cliente_Direccion.getText());
-                    ps.setString(5, Crear_cuenta_cliente_CorreoElectronico.getText());
-                    ps.setString(6, Crear_cuenta_cliente_Contraseña.getText());
+                    ps.setString(1, Crear_cuenta_cliente_Usuario.getText());
+                    ps.setString(2, Crear_cuenta_cliente_PrimerNombre.getText());
+                    ps.setString(3, Crear_cuenta_cliente_SegundoNombre.getText());
+                    ps.setString(4, Crear_cuenta_cliente_PrimerApellido.getText());
+                    ps.setString(5, Crear_cuenta_cliente_SegundoApellido.getText());
+                    ps.setString(6, Crear_cuenta_cliente_Direccion.getText());
+                    ps.setString(7, Crear_cuenta_cliente_CorreoElectronico.getText());
+                    ps.setString(8, Crear_cuenta_cliente_Contraseña.getText());
                     int registrar = ps.executeUpdate();
                     if (registrar > 0) {
-                        Crear_cuenta_cliente_NombreCompleto.setText("");
+                        Crear_cuenta_cliente_Usuario.setText("");
+                        Crear_cuenta_cliente_PrimerNombre.setText("");
+                        Crear_cuenta_cliente_SegundoNombre.setText("");
+                        Crear_cuenta_cliente_PrimerApellido.setText("");
+                        Crear_cuenta_cliente_SegundoApellido.setText("");
                         Crear_cuenta_cliente_Direccion.setText("");
                         Crear_cuenta_cliente_CorreoElectronico.setText("");
                         Crear_cuenta_cliente_Contraseña.setText("");
@@ -535,11 +602,11 @@ public class main extends javax.swing.JFrame {
 
     private void Crear_cuenta_AsesorMecánico_BotonCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Crear_cuenta_AsesorMecánico_BotonCrearActionPerformed
         String datos = (String) Crear_cuenta_AsesorMecánico_Tipo.getSelectedItem();
-                String insertar = "insert into empleado (ID_Empleado,Nombre,Telefono,Tipo,Contrasena) values (?,?,?,?,?)";
+                String insertar = "insert into empleados (id_Empleado,idAsesor_Empleado,primerNombre_Empleado,segundoNombre_Empleado,primerApellido_Empleado,segundoApellido_Empleado,telefonoAsignado_Empleado,contra_Empleado) values (?,?,?,?,?)";
                 try {
                     ps = (PreparedStatement) cn.prepareCall(insertar);
                     ps.setString(1, null);
-                    ps.setString(2, Crear_cuenta_AsesorMecánico_NombreCompleto.getText());
+                    ps.setString(2, Crear_cuenta_AsesorMecánico_PrimerNombre.getText());
                     ps.setString(3, Crear_cuenta_AsesorMecánico_NumeroTelefonoAsignado.getText());
                     ps.setString(4, datos);
                     ps.setString(5, Crear_cuenta_AsesorMecánico_Contraseña.getText());
@@ -673,8 +740,11 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JDialog Crear_cuenta_AsesorMecánico;
     private javax.swing.JButton Crear_cuenta_AsesorMecánico_BotonCrear;
     private javax.swing.JTextField Crear_cuenta_AsesorMecánico_Contraseña;
-    private javax.swing.JTextField Crear_cuenta_AsesorMecánico_NombreCompleto;
     private javax.swing.JTextField Crear_cuenta_AsesorMecánico_NumeroTelefonoAsignado;
+    private javax.swing.JTextField Crear_cuenta_AsesorMecánico_PrimerApellido;
+    private javax.swing.JTextField Crear_cuenta_AsesorMecánico_PrimerNombre;
+    private javax.swing.JTextField Crear_cuenta_AsesorMecánico_SegundoApellido;
+    private javax.swing.JTextField Crear_cuenta_AsesorMecánico_SegundoNombre;
     private javax.swing.JComboBox<String> Crear_cuenta_AsesorMecánico_Tipo;
     private javax.swing.JDialog Crear_cuenta_cliente;
     private javax.swing.JButton Crear_cuenta_cliente_BotonAgregar;
@@ -683,9 +753,14 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JTextField Crear_cuenta_cliente_Contraseña;
     private javax.swing.JTextField Crear_cuenta_cliente_CorreoElectronico;
     private javax.swing.JTextField Crear_cuenta_cliente_Direccion;
-    private javax.swing.JTextField Crear_cuenta_cliente_NombreCompleto;
+    private javax.swing.JTextField Crear_cuenta_cliente_PrimerApellido;
+    private javax.swing.JTextField Crear_cuenta_cliente_PrimerNombre;
+    private javax.swing.JTextField Crear_cuenta_cliente_SegundoApellido;
+    private javax.swing.JTextField Crear_cuenta_cliente_SegundoNombre;
+    private javax.swing.JTextField Crear_cuenta_cliente_Usuario;
     private javax.swing.JFormattedTextField Crear_cuenta_cliente_numeros;
     private javax.swing.JDialog Menu;
+    private javax.swing.JLabel Usuario;
     private datechooser.beans.DateChooserPanel dateChooserPanel1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -711,7 +786,6 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
@@ -730,7 +804,15 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
