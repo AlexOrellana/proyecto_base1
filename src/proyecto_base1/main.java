@@ -25,7 +25,7 @@ public class main extends javax.swing.JFrame {
 
     public Statement st;
     public ResultSet rs;
-    
+
     /**
      * Creates new form main
      */
@@ -532,12 +532,20 @@ public class main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void login_botonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_botonEntrarActionPerformed
-        LoginData(login_usuario.getText(), login_contraseña.getText());
-        this.setVisible(false); 
-        this.Menu.pack(); 
-        this.Menu.setModal(true); 
-        this.Menu.setLocationRelativeTo(this); 
-        this.Menu.setVisible(true); 
+        ID_Current = "";
+        ID_Current = login_usuario.getText();
+        if (login_usuario.getText().equals("") || login_contraseña.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "No ha ingresado los datos completos");
+        } else if (LoginData(login_usuario.getText(), login_contraseña.getText())[0].toString().equals(ID_Current)) {
+            this.setVisible(false);
+            this.Menu.pack();
+            this.Menu.setModal(true);
+            this.Menu.setLocationRelativeTo(this);
+            this.Menu.setVisible(true);
+        }
+        //LoginData(login_usuario.getText(), login_contraseña.getText());
+        login_usuario.setText("");
+        login_contraseña.setText("");
     }//GEN-LAST:event_login_botonEntrarActionPerformed
     PreparedStatement ps;
     private void Crear_cuenta_cliente_BotonCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Crear_cuenta_cliente_BotonCrearActionPerformed
@@ -568,7 +576,7 @@ public class main extends javax.swing.JFrame {
                         Crear_cuenta_cliente_CorreoElectronico.setText("");
                         Crear_cuenta_cliente_Contraseña.setText("");
                         this.Crear_cuenta_cliente_numeros.setText("");
-                        numeros=new ArrayList();
+                        numeros = new ArrayList();
                         this.Crear_cuenta_cliente_ComboBox.setModel(new DefaultComboBoxModel());
                         this.Crear_cuenta_cliente.setVisible(false);
                         JOptionPane.showMessageDialog(null, "Cuenta creada exitosamente");
@@ -613,26 +621,26 @@ public class main extends javax.swing.JFrame {
 
     private void Crear_cuenta_AsesorMecánico_BotonCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Crear_cuenta_AsesorMecánico_BotonCrearActionPerformed
         String datos = (String) Crear_cuenta_AsesorMecánico_Tipo.getSelectedItem();
-                String insertar = "insert into empleados (id_Empleado,idAsesor_Empleado,primerNombre_Empleado,segundoNombre_Empleado,primerApellido_Empleado,segundoApellido_Empleado,telefonoAsignado_Empleado,contra_Empleado) values (?,?,?,?,?)";
-                try {
-                    ps = (PreparedStatement) cn.prepareCall(insertar);
-                    ps.setString(1, null);
-                    ps.setString(2, Crear_cuenta_AsesorMecánico_PrimerNombre.getText());
-                    ps.setString(3, Crear_cuenta_AsesorMecánico_NumeroTelefonoAsignado.getText());
-                    ps.setString(4, datos);
-                    ps.setString(5, Crear_cuenta_AsesorMecánico_Contraseña.getText());
-                    
-                    int registrar = ps.executeUpdate();
-                    if (registrar > 0) {
-                        this.Crear_cuenta_AsesorMecánico.setVisible(false);
-                        JOptionPane.showMessageDialog(null, "Cuenta creada exitosamente");
-                        this.setVisible(true);
-                    } else {
-                        JOptionPane.showMessageDialog(null, "La cuenta NO FUE REGISTRADA, FAVOR VER CODIGO");
-                    }
-                } catch (Exception e) {
-                }
-        
+        String insertar = "insert into empleados (id_Empleado,idAsesor_Empleado,primerNombre_Empleado,segundoNombre_Empleado,primerApellido_Empleado,segundoApellido_Empleado,telefonoAsignado_Empleado,contra_Empleado) values (?,?,?,?,?)";
+        try {
+            ps = (PreparedStatement) cn.prepareCall(insertar);
+            ps.setString(1, null);
+            ps.setString(2, Crear_cuenta_AsesorMecánico_PrimerNombre.getText());
+            ps.setString(3, Crear_cuenta_AsesorMecánico_NumeroTelefonoAsignado.getText());
+            ps.setString(4, datos);
+            ps.setString(5, Crear_cuenta_AsesorMecánico_Contraseña.getText());
+
+            int registrar = ps.executeUpdate();
+            if (registrar > 0) {
+                this.Crear_cuenta_AsesorMecánico.setVisible(false);
+                JOptionPane.showMessageDialog(null, "Cuenta creada exitosamente");
+                this.setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(null, "La cuenta NO FUE REGISTRADA, FAVOR VER CODIGO");
+            }
+        } catch (Exception e) {
+        }
+
         /*try {
 //            Connection miConexion;
 //            miConexion = Conectar.GetConnetion();
@@ -668,9 +676,9 @@ public class main extends javax.swing.JFrame {
 
     private void Crear_cuenta_cliente_BotonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Crear_cuenta_cliente_BotonAgregarActionPerformed
         numeros.add(this.Crear_cuenta_cliente_numeros.getText());
-        DefaultComboBoxModel modelo=new DefaultComboBoxModel();
-        for (int i = 0; i < numeros.size();i++) {
-                modelo.addElement(numeros.get(i));
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+        for (int i = 0; i < numeros.size(); i++) {
+            modelo.addElement(numeros.get(i));
         }
         this.Crear_cuenta_cliente_ComboBox.setModel(modelo);
     }//GEN-LAST:event_Crear_cuenta_cliente_BotonAgregarActionPerformed
@@ -688,7 +696,21 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5MouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        //String borrar = "DELETE FROM `clientes` WHERE `clientes`.`id_Cliente` = \'super\' values (?,?,?,?,?)";
+        try {
+            ps = (PreparedStatement) cn.prepareCall("DELETE FROM `clientes` WHERE `clientes`.`id_Cliente` = '" + ID_Current + "'");
+
+            int registrar = ps.executeUpdate();
+            if (registrar > 0) {
+                this.Menu.setVisible(false);
+                JOptionPane.showMessageDialog(null, "Cuenta ha sido eliminada exitosamente");
+                this.setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(null, "La cuenta NO FUE REGISTRADA, FAVOR VER CODIGO");
+            }
+        } catch (Exception e) {
+        }
+        //DELETE FROM `clientes` WHERE `clientes`.`id_Cliente` = \'super\'
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -838,10 +860,10 @@ public class main extends javax.swing.JFrame {
 
     Conectar cc = new Conectar();
     Connection cn = cc.conexion();
-    ArrayList numeros=new ArrayList();
-    
-    
-    
+    ArrayList numeros = new ArrayList();
+
+    String ID_Current;
+
     public String[] LoginData(String ID, String Password) {
         String pass = "";
         String checkAsesor = "";
@@ -871,11 +893,11 @@ public class main extends javax.swing.JFrame {
                         return new String[]{ID, "Empleado"};
                     }
                 }
+
             }
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Joven usted ha ingresado algo incorrecto o no exite su usuario");
-            System.out.println(e);
         }
         return new String[0];
     }
