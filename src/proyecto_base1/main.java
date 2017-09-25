@@ -759,6 +759,32 @@ public class main extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        //UPDATE `clientes` SET `segundoNombre_Cliente` = 'hola', `contra_Cliente` = 'zxc' WHERE `clientes`.`id_Cliente` = 'super'; 
+                try {
+                    String cargar = "SELECT * FROM `clientes` WHERE `id_Cliente` = '"+ID_Current+"'";
+                    rs =  (ResultSet) st.executeQuery(cargar);
+                    String []data = new String[8];
+                    
+                    while(rs.next()){
+                        data[0] = rs.getString(1);
+                        data[1] = rs.getString(2);
+                        data[2] = rs.getString(3);
+                        data[3] = rs.getString(4);
+                        data[4] = rs.getString(5);
+                        data[5] = rs.getString(6);
+                        data[6] = rs.getString(7);
+                        data[7] = rs.getString(8);
+                    }
+                    Crear_cuenta_cliente_Usuario.setText(data[0]);
+                    Crear_cuenta_cliente_PrimerNombre.setText(data[1]);
+                    Crear_cuenta_cliente_SegundoNombre.setText(data[2]);
+                    Crear_cuenta_cliente_PrimerApellido.setText(data[3]);
+                    Crear_cuenta_cliente_SegundoApellido.setText(data[4]);
+                    Crear_cuenta_cliente_Direccion.setText(data[5]);
+                    Crear_cuenta_cliente_CorreoElectronico.setText(data[6]);
+                    Crear_cuenta_cliente_Contraseña.setText(data[7]);
+                }catch (Exception e){
+                }
         this.Menu.setVisible(false);
         this.Crear_cuenta_cliente_BotonCrear.setText("Modificar");
         this.Crear_cuenta_cliente.pack();
