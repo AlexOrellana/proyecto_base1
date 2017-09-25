@@ -131,6 +131,8 @@ public class main extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
         jLabel27 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         login_botonEntrar = new javax.swing.JButton();
@@ -466,16 +468,22 @@ public class main extends javax.swing.JFrame {
         Carros_cliente.getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, 270, -1));
 
         jButton6.setText("Modificar");
-        Carros_cliente.getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, -1, -1));
+        Carros_cliente.getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, -1, -1));
 
-        jButton7.setText("Eliminar");
-        Carros_cliente.getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 210, -1, -1));
+        jButton7.setText("Ver estado");
+        Carros_cliente.getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 210, -1, -1));
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         Carros_cliente.getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 70, 180));
 
         jButton8.setText("Agregar");
         Carros_cliente.getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, -1, -1));
+
+        jButton9.setText("Eliminar");
+        Carros_cliente.getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 210, -1, -1));
+
+        jButton10.setText("Salir");
+        Carros_cliente.getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 20, -1, -1));
 
         jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_base1/abstract-black-geometric-line-pattern-34-iphone-7-plus-wallpaper-576x1024.jpg"))); // NOI18N
         Carros_cliente.getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 573, 361));
@@ -763,6 +771,7 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel Usuario;
     private datechooser.beans.DateChooserPanel dateChooserPanel1;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -770,6 +779,7 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox4;
