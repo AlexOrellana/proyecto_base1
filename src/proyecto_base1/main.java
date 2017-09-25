@@ -632,7 +632,8 @@ public class main extends javax.swing.JFrame {
                 
                 try{
                     int registrar;
-                    ps = (PreparedStatement) cn.prepareCall("UPDATE `clientes` SET contra_Cliente = '"+Crear_cuenta_cliente_Contraseña.getText()+",correoElectronico_Cliente = '"+Crear_cuenta_cliente_CorreoElectronico+"', direccion_Cliente = '"+Crear_cuenta_cliente_Direccion.getText()+"', primerApellido_Cliente = '"+Crear_cuenta_cliente_PrimerApellido.getText()+"', primerNombre_Cliente = '"+Crear_cuenta_cliente_PrimerNombre.getText()+"', segundoApellido_Cliente = '"+Crear_cuenta_cliente_SegundoApellido.getText()+"', segundoNombre_Cliente = '"+Crear_cuenta_cliente_SegundoNombre+"'  'WHERE `clientes`.`id_Cliente` = '" + ID_Current + "'");
+                    System.out.println(ID_Current);
+                    ps = (PreparedStatement) cn.prepareCall("UPDATE `clientes` SET contra_Cliente = '"+Crear_cuenta_cliente_Contraseña.getText()+"', correoElectronico_Cliente = '"+Crear_cuenta_cliente_CorreoElectronico.getText()+"', direccion_Cliente = '"+Crear_cuenta_cliente_Direccion.getText()+"', primerApellido_Cliente = '"+Crear_cuenta_cliente_PrimerApellido.getText()+"', primerNombre_Cliente = '"+Crear_cuenta_cliente_PrimerNombre.getText()+"', segundoApellido_Cliente = '"+Crear_cuenta_cliente_SegundoApellido.getText()+"', segundoNombre_Cliente = '"+Crear_cuenta_cliente_SegundoNombre.getText()+"'  WHERE `clientes`.`id_Cliente` = '" + ID_Current + "'");
                     registrar = ps.executeUpdate();
                     
                     
@@ -651,6 +652,8 @@ public class main extends javax.swing.JFrame {
                         this.Crear_cuenta_cliente.setVisible(false);
                         JOptionPane.showMessageDialog(null, "Cuenta modificada exitosamente");
                         this.Menu.setVisible(true);
+                    }else{
+                        
                     }
                 } catch (Exception e) {
                     e.getMessage();
