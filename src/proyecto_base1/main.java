@@ -66,6 +66,7 @@ public class main extends javax.swing.JFrame {
         jLabel41 = new javax.swing.JLabel();
         jLabel42 = new javax.swing.JLabel();
         Crear_cuenta_cliente_Usuario = new javax.swing.JTextField();
+        Crear_cuenta_cliente_BotonCancelar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         Crear_cita = new javax.swing.JDialog();
         jLabel26 = new javax.swing.JLabel();
@@ -225,6 +226,14 @@ public class main extends javax.swing.JFrame {
         jLabel42.setText("Usuario:");
         Crear_cuenta_cliente.getContentPane().add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, -1, -1));
         Crear_cuenta_cliente.getContentPane().add(Crear_cuenta_cliente_Usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 120, 240, -1));
+
+        Crear_cuenta_cliente_BotonCancelar.setText("Cancelar");
+        Crear_cuenta_cliente_BotonCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Crear_cuenta_cliente_BotonCancelarActionPerformed(evt);
+            }
+        });
+        Crear_cuenta_cliente.getContentPane().add(Crear_cuenta_cliente_BotonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 20, -1, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_base1/black-wallpaper-png-scaled-1000.jpg"))); // NOI18N
         Crear_cuenta_cliente.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, -1, -1));
@@ -422,11 +431,6 @@ public class main extends javax.swing.JFrame {
         Menu.getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, -1, -1));
 
         jButton1.setText("Eliminar mi cuenta");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
-            }
-        });
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -435,17 +439,17 @@ public class main extends javax.swing.JFrame {
         Menu.getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, 130, -1));
 
         jButton3.setText("Modificar mi cuenta");
-        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton3MouseClicked(evt);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
             }
         });
         Menu.getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, 130, -1));
 
         jButton4.setText("Salir");
-        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton4MouseClicked(evt);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
             }
         });
         Menu.getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, 130, -1));
@@ -454,6 +458,11 @@ public class main extends javax.swing.JFrame {
         jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton5MouseClicked(evt);
+            }
+        });
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
             }
         });
         Menu.getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 130, -1));
@@ -480,12 +489,22 @@ public class main extends javax.swing.JFrame {
         Carros_cliente.getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 70, 180));
 
         jButton8.setText("Agregar");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
         Carros_cliente.getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, -1, -1));
 
         jButton9.setText("Eliminar");
         Carros_cliente.getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 210, -1, -1));
 
         jButton10.setText("Salir");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
         Carros_cliente.getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 20, -1, -1));
 
         jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_base1/abstract-black-geometric-line-pattern-34-iphone-7-plus-wallpaper-576x1024.jpg"))); // NOI18N
@@ -521,6 +540,11 @@ public class main extends javax.swing.JFrame {
         jToggleButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jToggleButton1MouseClicked(evt);
+            }
+        });
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
             }
         });
         getContentPane().add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 20, -1, -1));
@@ -688,16 +712,6 @@ public class main extends javax.swing.JFrame {
         this.Crear_cuenta_cliente.setVisible(true);
     }//GEN-LAST:event_jToggleButton1MouseClicked
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        //necesita el autocompletado
-        this.Menu.setVisible(false);
-        this.Crear_cuenta_cliente_BotonCrear.setText("Modificar");
-        this.Crear_cuenta_cliente.pack();
-        this.Crear_cuenta_cliente.setModal(true);
-        this.Crear_cuenta_cliente.setLocationRelativeTo(this);
-        this.Crear_cuenta_cliente.setVisible(true);
-    }//GEN-LAST:event_jButton1MouseClicked
-
     private void Crear_cuenta_cliente_BotonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Crear_cuenta_cliente_BotonAgregarActionPerformed
         numeros.add(this.Crear_cuenta_cliente_numeros.getText());
         DefaultComboBoxModel modelo = new DefaultComboBoxModel();
@@ -706,14 +720,6 @@ public class main extends javax.swing.JFrame {
         }
         this.Crear_cuenta_cliente_ComboBox.setModel(modelo);
     }//GEN-LAST:event_Crear_cuenta_cliente_BotonAgregarActionPerformed
-
-    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3MouseClicked
-
-    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4MouseClicked
 
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
         // TODO add your handling code here:
@@ -736,6 +742,60 @@ public class main extends javax.swing.JFrame {
         }
         //DELETE FROM `clientes` WHERE `clientes`.`id_Cliente` = \'super\'
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void Crear_cuenta_cliente_BotonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Crear_cuenta_cliente_BotonCancelarActionPerformed
+        // TODO add your handling code here:
+        Crear_cuenta_cliente.setVisible(false);
+        if (Crear_cuenta_cliente_BotonCrear.getText()=="Crear") {
+            this.setVisible(true);
+        }else if (Crear_cuenta_cliente_BotonCrear.getText()=="Modificar") {
+            this.Menu.setVisible(true);
+        }
+    }//GEN-LAST:event_Crear_cuenta_cliente_BotonCancelarActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        this.Menu.setVisible(false);
+        this.Crear_cuenta_cliente_BotonCrear.setText("Modificar");
+        this.Crear_cuenta_cliente.pack();
+        this.Crear_cuenta_cliente.setModal(true);
+        this.Crear_cuenta_cliente.setLocationRelativeTo(this);
+        this.Crear_cuenta_cliente.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        this.Menu.setVisible(false);
+        this.setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        this.Menu.setVisible(false);
+        this.Carros_cliente.pack();
+        this.Carros_cliente.setModal(true);
+        this.Carros_cliente.setLocationRelativeTo(this);
+        this.Carros_cliente.setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+        this.Carros_cliente.setVisible(false);
+        this.Menu.setVisible(true);
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+        this.Carros_cliente.setVisible(false);
+        this.Agregar_Carro.pack();
+        this.Agregar_Carro.setModal(true);
+        this.Agregar_Carro.setLocationRelativeTo(this);
+        this.Agregar_Carro.setVisible(true);
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -797,6 +857,7 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Crear_cuenta_AsesorMecánico_Tipo;
     private javax.swing.JDialog Crear_cuenta_cliente;
     private javax.swing.JButton Crear_cuenta_cliente_BotonAgregar;
+    private javax.swing.JButton Crear_cuenta_cliente_BotonCancelar;
     private javax.swing.JButton Crear_cuenta_cliente_BotonCrear;
     private javax.swing.JComboBox<String> Crear_cuenta_cliente_ComboBox;
     private javax.swing.JTextField Crear_cuenta_cliente_Contraseña;
