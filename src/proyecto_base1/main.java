@@ -23,6 +23,9 @@ import javax.swing.DefaultComboBoxModel;
  */
 public class main extends javax.swing.JFrame {
 
+    public Statement st;
+    public ResultSet rs;
+    
     /**
      * Creates new form main
      */
@@ -534,7 +537,7 @@ public class main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void login_botonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_botonEntrarActionPerformed
-        // TODO add your handling code here:
+        LoginData(login_usuario.getText(), login_contraseña.getText());
     }//GEN-LAST:event_login_botonEntrarActionPerformed
     PreparedStatement ps;
     private void Crear_cuenta_cliente_BotonCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Crear_cuenta_cliente_BotonCrearActionPerformed
@@ -844,4 +847,43 @@ public class main extends javax.swing.JFrame {
     Conectar cc = new Conectar();
     Connection cn = cc.conexion();
     ArrayList numeros=new ArrayList();
+    
+    
+    
+    public String[] LoginData(String ID, String Password) {
+        String pass = "";
+        String checkAsesor = "";
+        String QueryCliente = "select * from Clientes where id_Cliente='" + ID + "';";
+        String QueryEmpleado = "select * from Empleados where id_Empleado='" + ID + "';";
+        try {
+            st = (Statement) cn.createStatement();
+            rs = st.executeQuery(QueryCliente);
+            //connect.rs = connect.st.executeQuery(QueryCliente);
+            while (rs.next()) {
+                pass = rs.getString("contra_Cliente");
+            }
+            if (pass.equals(Password)) {
+                return new String[]{ID, "Cliente"};
+            } else {
+                rs = ps.executeQuery(QueryEmpleado);
+                while (rs.next()) {
+                    pass = rs.getString("contra_Empleado");
+                    if (rs.getString("idAsesor_Empleado") == null) {
+                        checkAsesor = "Y";
+                    }
+                }
+                if (pass.equals(Password)) {
+                    if (checkAsesor.equals("Y")) {
+                        return new String[]{ID, "Asesor"};
+                    } else {
+                        return new String[]{ID, "Empleado"};
+                    }
+                }
+            }
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return new String[0];
+    }
 }
